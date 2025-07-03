@@ -1,6 +1,0 @@
-node_modules
-.webp
-.DS_Store
-.idea/
-build
-package-lock.json

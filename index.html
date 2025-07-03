@@ -1,0 +1,3983 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, viewport-fit=cover, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script type="module" src="js/index.bundle.js" defer></script>
+		<title>Cybercore</title>
+	</head>
+	<body class="light">
+		<header class="header container" role="banner">
+			<div class="header__wrap">
+				<div class="header__wrap-logo">
+					<a href="/" role="link" aria-label="Homepage">
+						<img alt="logo" src="../img/logo.jpg" width="113" height="60" />
+					</a>
+				</div>
+				<div class="header__search">
+					<label for="search-input" id="search-label" class="visually-hidden">Поиск</label>
+					<span class="header__search-icon">
+						<svg class="icon icon--search" aria-hidden="true">
+							<use href="./img/svgsprite/sprite.symbol.svg#search"></use>
+						</svg>
+					</span>
+					<input type="text" placeholder="Поиск по 469 играм" class="header__search-input" id="search-input" name="search" />
+					<button class="header__search-close-btn" type="button" aria-label="clear input" style="display: none">
+						<svg class="icon icon--close" aria-hidden="true">
+							<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+						</svg>
+					</button>
+				</div>
+				<nav class="header__menu" role="navigation" aria-label="Main menu">
+					<ul class="header__menu-list">
+						<li class="header__menu-item" id="help" style="position: relative">
+							<button class="header__menu-item-link" aria-label="Open help modal">
+								<span>Помощь</span>
+								<svg class="icon icon--arrow-small" aria-hidden="true">
+									>
+									<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+								</svg>
+							</button>
+							<div class="help-modal visually-hidden" id="help-modal">
+								<ul class="help-modal__list">
+									<li class="help-modal__list-item" id="help-modal-favorites">
+										<div class="help-modal__list-item-wrap">
+											<svg class="icon icon--empty-heart" aria-hidden="true">
+												<use href="./img/svgsprite/sprite.symbol.svg#empty-heart"></use>
+											</svg>
+											<span>Избранное</span>
+										</div>
+									</li>
+									<li class="help-modal__list-item">
+										<a class="help-modal__list-item-wrap" href="#">
+											<svg class="icon icon--guarantee" aria-hidden="true">
+												<use href="./img/svgsprite/sprite.symbol.svg#guarantee"></use>
+											</svg>
+											<span>Гарантии</span>
+										</a>
+									</li>
+									<li class="help-modal__list-item">
+										<a class="help-modal__list-item-wrap" href="#">
+											<svg class="icon icon--label" aria-hidden="true">
+												<use href="./img/svgsprite/sprite.symbol.svg#label"></use>
+											</svg>
+											<span>For Resellers</span>
+										</a>
+									</li>
+									<li class="help-modal__list-item">
+										<a class="help-modal__list-item-wrap" href="#">
+											<svg class="icon icon--info" aria-hidden="true">
+												<use href="./img/svgsprite/sprite.symbol.svg#info"></use>
+											</svg>
+											<span>Центр помощи</span>
+										</a>
+									</li>
+									<li class="help-modal__list-item">
+										<a class="help-modal__list-item-wrap" href="#">
+											<svg class="icon icon--rule" aria-hidden="true">
+												<use href="./img/svgsprite/sprite.symbol.svg#rule"></use>
+											</svg>
+											<span>Правила</span>
+										</a>
+									</li>
+									<li class="help-modal__list-item">
+										<a class="help-modal__list-item-wrap" href="#">
+											<svg class="icon icon--question" aria-hidden="true">
+												<use href="./img/svgsprite/sprite.symbol.svg#question"></use>
+											</svg>
+											<span>Запрос в&#160;поддержку</span>
+										</a>
+									</li>
+									<li class="help-modal__list-item">
+										<a class="help-modal__list-item-wrap help-modal__list-item-text" href="#">
+											<svg class="icon icon--question" aria-hidden="true">
+												<use href="./img/svgsprite/sprite.symbol.svg#question"></use>
+											</svg>
+											<span>Мои запросы</span>
+											<span class="help-modal__list-item-count">4</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<!--зарегистр пользователь-->
+						<li class="header__menu-item header__registered">
+							<a href="#" class="header__menu-item-link" aria-label="Purchases">
+								<span>Покупки</span>
+								<span
+									class="header__menu-item-link-count
+                                         header__menu-item-link-count--gray"
+									>8</span
+								>
+							</a>
+						</li>
+						<li class="header__menu-item header__registered">
+							<a href="#" class="header__menu-item-link" aria-label="Sales">
+								<span>Продажи</span>
+								<span
+									class="header__menu-item-link-count
+                                         header__menu-item-link-count--blue"
+									>24</span
+								>
+							</a>
+						</li>
+						<li class="header__menu-item header__registered">
+							<a href="#" class="header__menu-item-link" aria-label="Messages">
+								<svg class="icon icon--message" aria-hidden="true">
+									<use href="./img/svgsprite/sprite.symbol.svg#message"></use>
+								</svg>
+								<span>Сообщения</span>
+								<span
+									class="header__menu-item-link-count
+                                           header__menu-item-link-count--gray"
+									>24</span
+								>
+							</a>
+						</li>
+						<!--незарегистрир  пользователь-->
+						<li class="header__menu-item header__unregistered is-hidden">
+							<a href="#" class="header__menu-item-link" aria-label="Purchases">
+								<span>Гарантии</span>
+							</a>
+						</li>
+						<li class="header__menu-item header__unregistered is-hidden">
+							<a href="#" class="header__menu-item-link" aria-label="Sales">
+								<span>For&#160;Resellers</span>
+							</a>
+						</li>
+						<!--end //незарегистрир  пользователь-->
+					</ul>
+				</nav>
+				<!--зарегистр пользователь-->
+				<button type="button" class="header__message header__registered" aria-label="message">
+					<svg class="icon icon--message" aria-hidden="true">
+						<use href="./img/svgsprite/sprite.symbol.svg#message"></use>
+					</svg>
+				</button>
+				<!--end///зарегистр пользователь-->
+				<!--незарегистр пользователь-->
+				<div class="header__unregistered-btns header__unregistered is-hidden">
+					<button type="button" class="user-btn" aria-label="user">
+						<svg class="icon icon--user-btn">
+							<use href="./img/svgsprite/sprite.symbol.svg#user-btn"></use>
+						</svg>
+					</button>
+					<button type="button" class="burger-btn" aria-label="user">
+						<svg class="icon icon--burger">
+							<use href="./img/svgsprite/sprite.symbol.svg#burger"></use>
+						</svg>
+					</button>
+				</div>
+
+				<div class="header__unregistered-block header__unregistered is-hidden">
+					<div class="favorites">
+						<button class="favorites__btn" type="button" aria-label="Добавить в избранное">
+							<svg class="icon icon--heart" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#heart"></use>
+							</svg>
+						</button>
+						<span class="favorites__label"></span>
+					</div>
+					<button class="currency-btn" type="button" aria-label="open currency modal">
+						<span>RU&#160;/ ₽</span>
+						<svg class="icon icon--arrow-small" aria-hidden="true">
+							>
+							<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+						</svg>
+					</button>
+					<div class="currency-modal hidden" id="currency-modal">
+						<div class="currency">
+							<div class="currency__custom-select" data-select="parent">
+								<button class="currency__custom-select-selected" type="button" aria-pressed="false" data-select="select-opener" data-role="button">
+									<span data-select="title">Русский</span>
+									<svg class="icon icon--arrow-small">
+										<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+									</svg>
+								</button>
+								<ul class="currency__select-items" data-select="select-list" style="display: none">
+									<li class="currency__select-item">
+										<button type="button" data-role="button" data-select="button">
+											<span> Английский</span>
+										</button>
+									</li>
+									<li class="currency__select-item">
+										<button type="button" data-role="button" data-select="button">
+											<span>Русский</span>
+										</button>
+									</li>
+								</ul>
+								<div class="currency__currency-wrap">
+									<button class="btn active currency__currency-item" type="button" aria-label="@@label">
+										Рубли, ₽
+									</button>
+
+									<button class="btn  currency__currency-item" type="button" aria-label="@@label">
+										Dollars, $
+									</button>
+
+									<button class="btn  currency__currency-item" type="button" aria-label="@@label">
+										Euro, &#8364;
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<button type="button" class="auth-btn" id="auth-btn">
+						<svg class="icon icon--user-btn">
+							<use href="./img/svgsprite/sprite.symbol.svg#user-btn"></use>
+						</svg>
+						<span>Войти</span>
+					</button>
+				</div>
+				<!--end ///незарегистр пользователь-->
+				<!--зарегистр пользователь-->
+				<div class="header__currency header__registered" aria-label="Current balance">
+					<svg class="icon icon--many" aria-hidden="true">
+						<use href="./img/svgsprite/sprite.symbol.svg#many"></use>
+					</svg>
+					<span class="header__currency-text"> 978 879 ₽</span>
+				</div>
+				<div class="header__auth header__registered">
+					<div class="header__auth-avatar">
+						<span class="header__auth-avatar-count">0</span>
+						<picture>
+							<source srcset="./img/avatar.webp 1x, ./img/avatar@2x.webp 2x" type="image/webp" />
+							<source srcset="./img/avatar.png 1x, ./img/avatar@2x.png 2x" type="image/png" />
+							<img src="./img/avatar.png" alt="user-avatar" class="header__auth-avatar-icon" />
+						</picture>
+					</div>
+					<button class="header__auth-arrow-btn" aria-label="profile modal">
+						<svg class="icon icon--arrow-small" aria-hidden="true">
+							<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+						</svg>
+					</button>
+					<div class="profile-modal hidden" id="profile-modal" aria-labelledby="profile-modal-title">
+						<div class="profile-modal__wrap">
+							<picture>
+								<source srcset="./img/avatar.webp 1x, ./img/avatar@2x.webp 2x" type="image/webp" />
+								<source srcset="./img/avatar.jpg 1x, ./img/avatar@2x.jpg 2x" type="image/jpeg" />
+								<img src="./img/avatar.jpg" alt="user-avatar" class="profile-modal__auth-avatar" />
+							</picture>
+							<div>
+								<span class="profile-modal__title" id="profile-modal-title">профиль</span>
+								<span class="profile-modal__name" aria-label="Имя пользователя">
+									Svet
+								</span>
+							</div>
+							<a class="profile-modal__link" href="#" aria-label="arrow link">
+								<svg class="icon icon--arrow-small-xs">
+									<use href="./img/svgsprite/sprite.symbol.svg#arrow-small-xs"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="currency">
+							<div class="currency__custom-select" data-select="parent">
+								<button class="currency__custom-select-selected" type="button" aria-pressed="false" data-select="select-opener" data-role="button">
+									<span data-select="title">Русский</span>
+									<svg class="icon icon--arrow-small">
+										<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+									</svg>
+								</button>
+								<ul class="currency__select-items" data-select="select-list" style="display: none">
+									<li class="currency__select-item">
+										<button type="button" data-role="button" data-select="button">
+											<span> Английский</span>
+										</button>
+									</li>
+									<li class="currency__select-item">
+										<button type="button" data-role="button" data-select="button">
+											<span>Русский</span>
+										</button>
+									</li>
+								</ul>
+								<div class="currency__currency-wrap">
+									<button class="btn active currency__currency-item" type="button" aria-label="@@label">
+										Рубли, ₽
+									</button>
+
+									<button class="btn  currency__currency-item" type="button" aria-label="@@label">
+										Dollars, $
+									</button>
+
+									<button class="btn  currency__currency-item" type="button" aria-label="@@label">
+										Euro, &#8364;
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="profile-modal__setting-wrap">
+							<svg class="icon icon--setting">
+								<use href="./img/svgsprite/sprite.symbol.svg#setting"></use>
+							</svg>
+							<a class="profile-modal__settings" aria-label="Настройки профиля" href="#">Настройки</a>
+							<svg class="icon icon--arrow-small-xs">
+								<use href="./img/svgsprite/sprite.symbol.svg#arrow-small-xs"></use>
+							</svg>
+						</div>
+						<button type="submit" class="profile-modal__go-out" aria-label="Выйти из кабинета">Выйти из&#160;кабинета</button>
+					</div>
+				</div>
+				<!--end ///зарегистр пользователь-->
+			</div>
+		</header>
+		<div class="mobile-menu visually-hidden container" style="display: block">
+			<div class="mobile-menu__header">
+				<div class="mobile-menu__header-logo">
+					<a href="/" role="link" aria-label="Homepage">
+						<svg width="87" height="32" viewBox="0 0 87 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_1836_66556)">
+								<path
+									d="M80.9054 23.582V20.1861L87.5 8.42041H83.7996L79.4148 16.6685H79.2263L74.7487 8.42041H70.9845L77.5791 20.1861V23.582H80.9054ZM65.3411 12.0595H65.5586L67.9859 18.0032H62.9167L65.3411 12.0595ZM63.8186 8.42041L56.9137 23.582H60.4285L61.6407 20.8845H69.2909L70.506 23.582H74.1136L67.2087 8.42041H63.8186ZM52.3375 16.7279H47.9817V11.3017H52.12C52.99 11.3017 53.7353 11.6043 54.2341 12.1783C54.6082 12.6646 54.8866 13.3009 54.8866 14.0304C54.8866 14.7882 54.6372 15.4244 54.1732 15.939C53.7353 16.4565 53.1118 16.7279 52.3375 16.7279ZM58.2158 14.0304C58.2158 12.4837 57.5923 11.149 56.5976 10.1792C55.5101 9.05662 53.9847 8.42041 52.2447 8.42041H44.6554V23.582H47.9817V19.6092H52.2447C53.9847 19.6092 55.571 18.9108 56.6614 17.8194C57.6242 16.8184 58.2158 15.4838 58.2158 14.0304ZM28.3081 17.1521V8.42041H24.9818V17.3047C24.9818 18.4245 24.6077 19.3067 24.0161 19.9118C23.3955 20.548 22.5255 20.9439 21.4351 20.9439C20.3795 20.9439 19.5066 20.5791 18.8222 19.8835C18.1697 19.2445 17.8275 18.3651 17.8275 17.3047V8.42041H14.5012V17.1521C14.5012 19.0013 15.2465 20.6696 16.4587 21.9137C17.6709 23.0957 19.321 23.8252 21.4351 23.8252C23.3955 23.8252 25.0137 23.1579 26.2259 22.0664C27.5628 20.8223 28.3081 19.0946 28.3081 17.1521ZM0.5 8.42041V23.582H3.8292V17.6384H11.5722V14.7571H3.8292V11.33H12.535V8.42041H0.5Z"
+									fill="#151515"
+								/>
+								<path
+									d="M28.6997 8.42061L36.4804 0L44.264 8.42061H40.6013V18.337L32.142 8.42061H28.6997ZM44.264 23.5822L36.4804 32L28.6997 23.5822H32.3914V13.6347L40.8188 23.5822H44.264Z"
+									fill="#255FE4"
+								/>
+							</g>
+							<defs>
+								<clipPath id="clip0_1836_66556">
+									<rect width="87" height="32" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+				</div>
+				<button class="mobile-menu__header-close-btn" type="button" aria-label="close" tabindex="0">
+					<svg class="icon icon--close">
+						<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+					</svg>
+				</button>
+			</div>
+			<!--неавториз пользователь-->
+			<!--    <button type="submit" class="mobile-menu__auth-btn">-->
+			<!--        <svg class="icon icon&#45;&#45;user-btn">-->
+			<!--            <use href="./img/svgsprite/sprite.symbol.svg#user-btn"></use>-->
+			<!--        </svg>-->
+			<!--        <span>Войти</span>-->
+			<!--    </button>-->
+			<!--end--неавториз пользователь-->
+			<div class="mobile-menu__profile">
+				<picture>
+					<source srcset="./img/user-avatar.webp 1x, ./img/user-avatar@2x.webp 2x" type="image/webp" />
+					<source srcset="./img/user-avatar.jpg 1x, ./img/user-avatar@2x.jpg 2x" type="image/jpeg" />
+					<img class="mobile-menu__profile-avatar" src="./img/user-avatar.jpg" alt="user-avatar" width="40" height="40" />
+				</picture>
+				<div class="mobile-menu__profile-wrap">
+					<span class="mobile-menu__profile-title">Профиль</span>
+					<span class="mobile-menu__profile-name">BeSnovAtyi__NAgiBat0r</span>
+				</div>
+				<button class="mobile-menu__profile-btn" type="button">
+					<svg class="icon icon--arrow-small">
+						<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+					</svg>
+				</button>
+			</div>
+			<ul class="mobile-menu__personal-info-list">
+				<li class="mobile-menu__personal-info-item">
+					<a class="mobile-menu__personal-info-link" href="#">
+						<span class="mobile-menu__personal-info-link-text">Сообщения</span>
+						<span class="mobile-menu__personal-info-link-count--blue">24</span>
+					</a>
+				</li>
+				<li class="mobile-menu__personal-info-item">
+					<a class="mobile-menu__personal-info-link" href="#">
+						<span class="mobile-menu__personal-info-link-text">Продажи</span>
+						<span class="mobile-menu__personal-info-link-count--gray">28</span>
+					</a>
+				</li>
+				<li class="mobile-menu__personal-info-item">
+					<a class="mobile-menu__personal-info-link" href="#">
+						<span class="mobile-menu__personal-info-link-text">Покупки</span>
+						<span class="mobile-menu__personal-info-link-count--gray">16</span>
+					</a>
+				</li>
+				<li class="mobile-menu__personal-info-item">
+					<a class="mobile-menu__personal-info-link" href="#">
+						<span class="mobile-menu__personal-info-link-text">Финансы</span>
+						<div class="mobile-menu__personal-info-link-many">
+							<svg class="icon icon--many">
+								<use href="./img/svgsprite/sprite.symbol.svg#many"></use>
+							</svg>
+							<span>978 879 ₽</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<nav>
+				<ul class="mobile-menu__list">
+					<li class="mobile-menu__list-item" id="mobile-menu-favorites">
+						<a href="#">
+							<svg class="icon icon--empty-heart" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#empty-heart"></use>
+							</svg>
+							<span>Избранное</span>
+						</a>
+					</li>
+					<li class="mobile-menu__list-item">
+						<a href="#">
+							<svg class="icon icon--guarantee" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#guarantee"></use>
+							</svg>
+							<span>Гарантии</span>
+						</a>
+					</li>
+					<li class="mobile-menu__list-item">
+						<a href="#">
+							<svg class="icon icon--label" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#label"></use>
+							</svg>
+							<span>For Resellers</span>
+						</a>
+					</li>
+					<li class="mobile-menu__list-item">
+						<a href="#">
+							<svg class="icon icon--info" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#info"></use>
+							</svg>
+							<span>Центр помощи</span>
+						</a>
+					</li>
+					<li class="mobile-menu__list-item">
+						<a href="#">
+							<svg class="icon icon--rule" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#rule"></use>
+							</svg>
+							<span>Правила</span>
+						</a>
+					</li>
+					<li class="mobile-menu__list-item">
+						<a href="#">
+							<svg class="icon icon--question" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#question"></use>
+							</svg>
+							<span>Запрос в&#160;поддержку</span>
+						</a>
+					</li>
+					<li class="mobile-menu__list-item">
+						<a class="mobile-menu__list-item-text" href="#">
+							<svg class="icon icon--question" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#question"></use>
+							</svg>
+							<span>Мои запросы</span>
+							<span class="mobile-menu__list-item-count">4</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="currency">
+				<div class="currency__custom-select" data-select="parent">
+					<button class="currency__custom-select-selected" type="button" aria-pressed="false" data-select="select-opener" data-role="button">
+						<span data-select="title">Русский</span>
+						<svg class="icon icon--arrow-small">
+							<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+						</svg>
+					</button>
+					<ul class="currency__select-items" data-select="select-list" style="display: none">
+						<li class="currency__select-item">
+							<button type="button" data-role="button" data-select="button">
+								<span> Английский</span>
+							</button>
+						</li>
+						<li class="currency__select-item">
+							<button type="button" data-role="button" data-select="button">
+								<span>Русский</span>
+							</button>
+						</li>
+					</ul>
+					<div class="currency__currency-wrap">
+						<button class="btn active currency__currency-item" type="button" aria-label="@@label">
+							Рубли, ₽
+						</button>
+
+						<button class="btn  currency__currency-item" type="button" aria-label="@@label">
+							Dollars, $
+						</button>
+
+						<button class="btn  currency__currency-item" type="button" aria-label="@@label">
+							Euro, &#8364;
+						</button>
+					</div>
+				</div>
+			</div>
+			<a href="/" class="mobile-menu__go-out">
+				Выйти из&#160;кабинета
+			</a>
+			<footer class="footer">
+				<ul class="soc">
+					<li class="soc__item">
+						<a href="#" class="soc__item-link">
+							<svg class="icon icon--vk">
+								<use href="./img/svgsprite/sprite.symbol.svg#vk"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="soc__item">
+						<a href="#" class="soc__item-link">
+							<svg class="icon icon--tg">
+								<use href="./img/svgsprite/sprite.symbol.svg#tg"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="soc__item">
+						<a href="#" class="soc__item-link">
+							<svg class="icon icon--youtube">
+								<use href="./img/svgsprite/sprite.symbol.svg#youtube"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="soc__item">
+						<a href="#" class="soc__item-link">
+							<svg class="icon icon--facebook">
+								<use href="./img/svgsprite/sprite.symbol.svg#facebook"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+				<ul class="policies">
+					<li class="policies__item">
+						<a href="#" class="policies__item-link policies__item-link--hidden">
+							<span>&#169; 2015&#8211;2024</span>
+						</a>
+					</li>
+					<li class="policies__item">
+						<a href="#" class="policies__item-link">
+							<span>Политика конфиденциальности</span>
+						</a>
+					</li>
+					<li class="policies__item">
+						<a href="#" class="policies__item-link" id="cookie-policy-link">
+							<span>Политика cookie</span>
+						</a>
+					</li>
+					<li class="policies__item">
+						<a href="#" class="policies__item-link">
+							<span>Отправить запрос</span>
+						</a>
+					</li>
+					<li class="policies__item">
+						<a href="#" class="policies__item-link policies__item-link--hidden">
+							<span>Сделано в&#160;AGIMA </span>
+						</a>
+					</li>
+				</ul>
+				<div class="info">
+					<span class="info__text">&#169; 2015&#8211;2024</span>
+					<span class="info__text">Сделано в&#160;AGIMA</span>
+				</div>
+			</footer>
+		</div>
+
+		<main class="main-page">
+			<div class="often-searched" id="often-searched">
+				<div class="often-searched__search-wrap">
+					<button type="button" class="often-searched__btn-back">
+						<svg class="icon icon--arrow-back" aria-hidden="true">
+							<use href="./img/svgsprite/sprite.symbol.svg#arrow-back"></use>
+						</svg>
+					</button>
+					<div class="often-searched__search">
+						<label for="often-searched-input" id="search-label" class="visually-hidden">Поиск</label>
+						<span class="often-searched__search-icon">
+							<svg class="icon icon--search" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#search"></use>
+							</svg>
+						</span>
+						<input type="text" placeholder="Поиск по 469 играм" class="often-searched__search-input" id="often-searched-input" name="search" />
+						<button class="often-searched__search-close-btn" type="button" aria-label="clear input" style="display: none">
+							<svg class="icon icon--close" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="often-searched__content">
+					<div class="not-found">
+						<span class="not-found__title">Ничего не&#160;найдено</span>
+						<span class="not-found__text">
+							Попробуйте другой запрос
+						</span>
+					</div>
+					<div class="found">
+						<ul class="found__list">
+							<li class="found__list-item">
+								<div class="card game-status-card">
+									<picture>
+										<source srcset="./img/often-searched/img1.webp 1x, ./img/often-searched/img1@2x.webp 2x" type="image/webp" />
+										<source srcset="./img/often-searched/img1.jpg 1x, ./img/often-searched/img1@2x.jpg 2x" type="image/jpeg" />
+										<img class="game-status-card__img" src="./img/often-searched/img1.jpg" alt="Aion Classic" />
+									</picture>
+									<div class="game-status-card__wrap">
+										<a href="#" class="title game-status-card__title">Aion Classic</a>
+										<div class="game-status-card__wrap-order">
+											<ul class="game-status-card__list-titles">
+												<li class="game-status-card__list-title">
+													<a href="#">Аккаунты</a>
+												</li>
+												<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+												<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+												<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+											</ul>
+											<ul class="game-status-card__list-buttons">
+												<li class="game-status-card__item">
+													<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+														RU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														EU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														Free
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span class="status-card  game-status-card__status"> </span>
+								</div>
+							</li>
+							<li class="found__list-item">
+								<div class="card game-status-card">
+									<picture>
+										<source srcset="./img/often-searched/img2.webp 1x, ./img/often-searched/img2@2x.webp 2x" type="image/webp" />
+										<source srcset="./img/often-searched/img2.jpg 1x, ./img/often-searched/img2@2x.jpg 2x" type="image/jpeg" />
+										<img class="game-status-card__img" src="./img/often-searched/img2.jpg" alt="Assassin’s Creed" />
+									</picture>
+									<div class="game-status-card__wrap">
+										<a href="#" class="title game-status-card__title">Assassin&#8217;s Creed</a>
+										<div class="game-status-card__wrap-order">
+											<ul class="game-status-card__list-titles">
+												<li class="game-status-card__list-title">
+													<a href="#">Аккаунты</a>
+												</li>
+												<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+												<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+												<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+											</ul>
+											<ul class="game-status-card__list-buttons">
+												<li class="game-status-card__item">
+													<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+														RU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														EU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														Free
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span class="status-card  game-status-card__status"> </span>
+								</div>
+							</li>
+							<li class="found__list-item">
+								<div class="card game-status-card">
+									<picture>
+										<source srcset="./img/often-searched/img3.webp 1x, ./img/often-searched/img3@2x.webp 2x" type="image/webp" />
+										<source srcset="./img/often-searched/img3.jpg 1x, ./img/often-searched/img3@2x.jpg 2x" type="image/jpeg" />
+										<img class="game-status-card__img" src="./img/often-searched/img3.jpg" alt="Assassin’s Creed" />
+									</picture>
+									<div class="game-status-card__wrap">
+										<a href="#" class="title game-status-card__title">Assassin&#8217;s Creed</a>
+										<div class="game-status-card__wrap-order">
+											<ul class="game-status-card__list-titles">
+												<li class="game-status-card__list-title">
+													<a href="#">Аккаунты</a>
+												</li>
+												<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+												<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+												<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+											</ul>
+											<ul class="game-status-card__list-buttons">
+												<li class="game-status-card__item">
+													<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+														RU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														EU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														Free
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span class="status-card  game-status-card__status"> </span>
+								</div>
+							</li>
+							<li class="found__list-item">
+								<div class="card game-status-card">
+									<picture>
+										<source srcset="./img/often-searched/img1.webp 1x, ./img/often-searched/img1@2x.webp 2x" type="image/webp" />
+										<source srcset="./img/often-searched/img1.jpg 1x, ./img/often-searched/img1@2x.jpg 2x" type="image/jpeg" />
+										<img class="game-status-card__img" src="./img/often-searched/img1.jpg" alt="Aion Classic" />
+									</picture>
+									<div class="game-status-card__wrap">
+										<a href="#" class="title game-status-card__title">Aion Classic</a>
+										<div class="game-status-card__wrap-order">
+											<ul class="game-status-card__list-titles">
+												<li class="game-status-card__list-title">
+													<a href="#">Аккаунты</a>
+												</li>
+												<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+												<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+												<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+											</ul>
+											<ul class="game-status-card__list-buttons">
+												<li class="game-status-card__item">
+													<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+														RU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														EU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														Free
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span class="status-card  game-status-card__status"> </span>
+								</div>
+							</li>
+							<li class="found__list-item">
+								<div class="card game-status-card">
+									<picture>
+										<source srcset="./img/often-searched/img2.webp 1x, ./img/often-searched/img2@2x.webp 2x" type="image/webp" />
+										<source srcset="./img/often-searched/img2.jpg 1x, ./img/often-searched/img2@2x.jpg 2x" type="image/jpeg" />
+										<img class="game-status-card__img" src="./img/often-searched/img2.jpg" alt="Assassin’s Creed" />
+									</picture>
+									<div class="game-status-card__wrap">
+										<a href="#" class="title game-status-card__title">Assassin&#8217;s Creed</a>
+										<div class="game-status-card__wrap-order">
+											<ul class="game-status-card__list-titles">
+												<li class="game-status-card__list-title">
+													<a href="#">Аккаунты</a>
+												</li>
+												<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+												<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+												<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+											</ul>
+											<ul class="game-status-card__list-buttons">
+												<li class="game-status-card__item">
+													<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+														RU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														EU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														Free
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span class="status-card  game-status-card__status"> </span>
+								</div>
+							</li>
+							<li class="found__list-item">
+								<div class="card game-status-card">
+									<picture>
+										<source srcset="./img/often-searched/img3.webp 1x, ./img/often-searched/img3@2x.webp 2x" type="image/webp" />
+										<source srcset="./img/often-searched/img3.jpg 1x, ./img/often-searched/img3@2x.jpg 2x" type="image/jpeg" />
+										<img class="game-status-card__img" src="./img/often-searched/img3.jpg" alt="Assassin’s Creed" />
+									</picture>
+									<div class="game-status-card__wrap">
+										<a href="#" class="title game-status-card__title">Assassin&#8217;s Creed</a>
+										<div class="game-status-card__wrap-order">
+											<ul class="game-status-card__list-titles">
+												<li class="game-status-card__list-title">
+													<a href="#">Аккаунты</a>
+												</li>
+												<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+												<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+												<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+											</ul>
+											<ul class="game-status-card__list-buttons">
+												<li class="game-status-card__item">
+													<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+														RU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														EU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														Free
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span class="status-card  game-status-card__status"> </span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="searched" aria-labelledby="searched-title">
+						<span class="searched__title" role="heading" id="searched-title">
+							Вы&#160;искали
+						</span>
+						<ul class="searched__list">
+							<li class="searched__list-item">
+								<div class="card game-status-card">
+									<picture>
+										<source srcset="./img/often-searched/img1.webp 1x, ./img/often-searched/img1@2x.webp 2x" type="image/webp" />
+										<source srcset="./img/often-searched/img1.jpg 1x, ./img/often-searched/img1@2x.jpg 2x" type="image/jpeg" />
+										<img class="game-status-card__img" src="./img/often-searched/img1.jpg" alt="Aion Classic" />
+									</picture>
+									<div class="game-status-card__wrap">
+										<a href="#" class="title game-status-card__title">Aion Classic</a>
+										<div class="game-status-card__wrap-order">
+											<ul class="game-status-card__list-titles">
+												<li class="game-status-card__list-title">
+													<a href="#">Аккаунты</a>
+												</li>
+												<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+												<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+												<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+											</ul>
+											<ul class="game-status-card__list-buttons">
+												<li class="game-status-card__item">
+													<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+														RU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														EU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														Free
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span class="status-card  game-status-card__status"> </span>
+								</div>
+							</li>
+							<li class="searched__list-item">
+								<div class="card game-status-card">
+									<picture>
+										<source srcset="./img/often-searched/img2.webp 1x, ./img/often-searched/img2@2x.webp 2x" type="image/webp" />
+										<source srcset="./img/often-searched/img2.jpg 1x, ./img/often-searched/img2@2x.jpg 2x" type="image/jpeg" />
+										<img class="game-status-card__img" src="./img/often-searched/img2.jpg" alt="Assassin’s Creed" />
+									</picture>
+									<div class="game-status-card__wrap">
+										<a href="#" class="title game-status-card__title">Assassin&#8217;s Creed</a>
+										<div class="game-status-card__wrap-order">
+											<ul class="game-status-card__list-titles">
+												<li class="game-status-card__list-title">
+													<a href="#">Аккаунты</a>
+												</li>
+												<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+												<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+												<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+											</ul>
+											<ul class="game-status-card__list-buttons">
+												<li class="game-status-card__item">
+													<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+														RU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														EU
+													</button>
+												</li>
+												<li class="game-status-card__item">
+													<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+														Free
+													</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span class="status-card  game-status-card__status"> </span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div aria-labelledby="often-searched-title">
+						<span class="often-searched__title" role="heading" id="often-searched-title">
+							Часто ищут
+						</span>
+						<ul class="often-searched__list">
+							<li class="often-searched__list-item">
+								<picture>
+									<source srcset="./img/often-searched/img1.webp 1x, ./img/often-searched/img1@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/often-searched/img1.jpg 1x, ./img/often-searched/img1@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/often-searched/img1.jpg" class="often-searched__list-item-img" alt="game cover" />
+								</picture>
+								<span class="often-searched__list-item-text">Roblox</span>
+							</li>
+							<li class="often-searched__list-item">
+								<picture>
+									<source srcset="./img/often-searched/img2.webp 1x, ./img/often-searched/img2@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/often-searched/img2.jpg 1x, ./img/often-searched/img2@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/often-searched/img2.jpg" class="often-searched__list-item-img" alt="game cover" />
+								</picture>
+								<span class="often-searched__list-item-text">Aliens: Dark Descent</span>
+							</li>
+							<li class="often-searched__list-item">
+								<picture>
+									<source srcset="./img/often-searched/img3.webp 1x, ./img/often-searched/img3@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/often-searched/img3.jpg 1x, ./img/often-searched/img3@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/often-searched/img3.jpg" class="often-searched__list-item-img" alt="game cover" />
+								</picture>
+								<span class="often-searched__list-item-text">PUBG Mobile</span>
+							</li>
+							<li class="often-searched__list-item">
+								<picture>
+									<source srcset="./img/often-searched/img4.webp 1x, ./img/often-searched/img4@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/often-searched/img4.jpg 1x, ./img/often-searched/img4@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/often-searched/img4.jpg" class="often-searched__list-item-img" alt="game cover" />
+								</picture>
+								<span class="often-searched__list-item-text">Aliens: Dark Descent</span>
+							</li>
+							<li class="often-searched__list-item">
+								<picture>
+									<source srcset="./img/often-searched/img5.webp 1x, ./img/often-searched/img5@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/often-searched/img5.jpg 1x, ./img/often-searched/img5@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/often-searched/img5.jpg" class="often-searched__list-item-img" alt="game cover" />
+								</picture>
+								<span class="often-searched__list-item-text">World of&#160;Warcraft Classi</span>
+							</li>
+							<li class="often-searched__list-item">
+								<picture>
+									<source srcset="./img/often-searched/img6.webp 1x, ./img/often-searched/img6@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/often-searched/img6.jpg 1x, ./img/often-searched/img6@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/often-searched/img6.jpg" class="often-searched__list-item-img" alt="game cover" />
+								</picture>
+								<span class="often-searched__list-item-text">Genshin Impact</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="my-games" id="my-games" aria-labelledby="my-games-title">
+				<div class="my-games__top-wrap">
+					<span class="my-games__title" role="heading" id="my-games-title">Мои игры </span>
+					<button class="my-games__btn" type="button" aria-label="close" tabindex="0">
+						<svg class="icon icon--close">
+							<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+						</svg>
+					</button>
+				</div>
+				<ul class="my-games__list">
+					<li class="my-games__list-item">
+						<div class="card game-status-card">
+							<picture>
+								<source srcset="./img/often-searched/img1.webp 1x, ./img/often-searched/img1@2x.webp 2x" type="image/webp" />
+								<source srcset="./img/often-searched/img1.jpg 1x, ./img/often-searched/img1@2x.jpg 2x" type="image/jpeg" />
+								<img class="game-status-card__img" src="./img/often-searched/img1.jpg" alt="Game" />
+							</picture>
+							<div class="game-status-card__wrap">
+								<a href="#" class="title game-status-card__title">Game</a>
+								<div class="game-status-card__wrap-order">
+									<ul class="game-status-card__list-titles">
+										<li class="game-status-card__list-title">
+											<a href="#">Аккаунты</a>
+										</li>
+										<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+										<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+										<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+									</ul>
+									<ul class="game-status-card__list-buttons">
+										<li class="game-status-card__item">
+											<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+												RU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												EU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												Free
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<span class="status-card  game-status-card__status"> </span>
+						</div>
+					</li>
+					<li class="my-games__list-item">
+						<div class="card game-status-card">
+							<picture>
+								<source srcset="./img/often-searched/img2.webp 1x, ./img/often-searched/img2@2x.webp 2x" type="image/webp" />
+								<source srcset="./img/often-searched/img2.jpg 1x, ./img/often-searched/img2@2x.jpg 2x" type="image/jpeg" />
+								<img class="game-status-card__img" src="./img/often-searched/img2.jpg" alt="Game" />
+							</picture>
+							<div class="game-status-card__wrap">
+								<a href="#" class="title game-status-card__title">Game</a>
+								<div class="game-status-card__wrap-order">
+									<ul class="game-status-card__list-titles">
+										<li class="game-status-card__list-title">
+											<a href="#">Аккаунты</a>
+										</li>
+										<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+										<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+										<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+									</ul>
+									<ul class="game-status-card__list-buttons">
+										<li class="game-status-card__item">
+											<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+												RU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												EU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												Free
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<span class="status-card  game-status-card__status"> </span>
+						</div>
+					</li>
+					<li class="my-games__list-item my-games__list-item--hidden">
+						<div class="card game-status-card">
+							<picture>
+								<source srcset="./img/often-searched/img3.webp 1x, ./img/often-searched/img3@2x.webp 2x" type="image/webp" />
+								<source srcset="./img/often-searched/img3.jpg 1x, ./img/often-searched/img3@2x.jpg 2x" type="image/jpeg" />
+								<img class="game-status-card__img" src="./img/often-searched/img3.jpg" alt="Game" />
+							</picture>
+							<div class="game-status-card__wrap">
+								<a href="#" class="title game-status-card__title">Game</a>
+								<div class="game-status-card__wrap-order">
+									<ul class="game-status-card__list-titles">
+										<li class="game-status-card__list-title">
+											<a href="#">Аккаунты</a>
+										</li>
+										<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+										<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+										<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+									</ul>
+									<ul class="game-status-card__list-buttons">
+										<li class="game-status-card__item">
+											<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+												RU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												EU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												Free
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<span class="status-card  game-status-card__status"> </span>
+						</div>
+					</li>
+					<li class="my-games__list-item my-games__list-item--hidden">
+						<div class="card game-status-card">
+							<picture>
+								<source srcset="./img/often-searched/img3.webp 1x, ./img/often-searched/img3@2x.webp 2x" type="image/webp" />
+								<source srcset="./img/often-searched/img3.jpg 1x, ./img/often-searched/img3@2x.jpg 2x" type="image/jpeg" />
+								<img class="game-status-card__img" src="./img/often-searched/img3.jpg" alt="Game" />
+							</picture>
+							<div class="game-status-card__wrap">
+								<a href="#" class="title game-status-card__title">Game</a>
+								<div class="game-status-card__wrap-order">
+									<ul class="game-status-card__list-titles">
+										<li class="game-status-card__list-title">
+											<a href="#">Аккаунты</a>
+										</li>
+										<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+										<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+										<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+									</ul>
+									<ul class="game-status-card__list-buttons">
+										<li class="game-status-card__item">
+											<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+												RU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												EU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												Free
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<span class="status-card  game-status-card__status"> </span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="container" style="position: relative">
+				<div class="favorites-message-modal-header visually-hidden" role="dialog" id="favorites-message-modal-header" aria-modal="true">
+					<button type="button" class="favorites-message-modal-header__close-btn" aria-label="Close modal">
+						<svg class="icon icon--close" aria-hidden="true">
+							<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+						</svg>
+					</button>
+					<div class="favorites-message-modal-header__content">
+						<span class="favorites-message-modal-header__title" role="heading">
+							Теперь ваши игры всегда рядом
+						</span>
+						<p class="favorites-message-modal-header__message">
+							В&#160;<a href="#">настройках</a> можно выбрать, будут&#160;ли игры в&#160;избранном отображаться в&#160;раскрытом виде или доступны через иконку.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="favorites-modal  visually-hidden" id="favorites-modal" aria-modal="true">
+				<button type="button" class="favorites-modal__close-btn" aria-label="Close modal">
+					<svg class="icon icon--close" aria-hidden="true">
+						<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+					</svg>
+				</button>
+				<span class="favorites-modal__title" role="heading">
+					Избранное
+				</span>
+				<ul class="favorites-modal__list">
+					<li class="favorites-modal__list-item">
+						<div class="card game-status-card">
+							<picture>
+								<source srcset="./img/often-searched/img1.webp 1x, ./img/often-searched/img1@2x.webp 2x" type="image/webp" />
+								<source srcset="./img/often-searched/img1.jpg 1x, ./img/often-searched/img1@2x.jpg 2x" type="image/jpeg" />
+								<img class="game-status-card__img" src="./img/often-searched/img1.jpg" alt="Aion Classic" />
+							</picture>
+							<div class="game-status-card__wrap">
+								<a href="#" class="title game-status-card__title">Aion Classic</a>
+								<div class="game-status-card__wrap-order">
+									<ul class="game-status-card__list-titles">
+										<li class="game-status-card__list-title">
+											<a href="#">Аккаунты</a>
+										</li>
+										<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+										<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+										<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+									</ul>
+									<ul class="game-status-card__list-buttons">
+										<li class="game-status-card__item">
+											<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+												RU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												EU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												Free
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<span class="status-card @@class game-status-card__status"> </span>
+						</div>
+					</li>
+					<li class="favorites-modal__list-item">
+						<div class="card game-status-card">
+							<picture>
+								<source srcset="./img/often-searched/img2.webp 1x, ./img/often-searched/img2@2x.webp 2x" type="image/webp" />
+								<source srcset="./img/often-searched/img2.jpg 1x, ./img/often-searched/img2@2x.jpg 2x" type="image/jpeg" />
+								<img class="game-status-card__img" src="./img/often-searched/img2.jpg" alt="Assassin’s Creed" />
+							</picture>
+							<div class="game-status-card__wrap">
+								<a href="#" class="title game-status-card__title">Assassin&#8217;s Creed</a>
+								<div class="game-status-card__wrap-order">
+									<ul class="game-status-card__list-titles">
+										<li class="game-status-card__list-title">
+											<a href="#">Аккаунты</a>
+										</li>
+										<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+										<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+										<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+									</ul>
+									<ul class="game-status-card__list-buttons">
+										<li class="game-status-card__item">
+											<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+												RU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												EU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												Free
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<span class="status-card @@class game-status-card__status"> </span>
+						</div>
+					</li>
+					<li class="favorites-modal__list-item">
+						<div class="card game-status-card">
+							<picture>
+								<source srcset="./img/often-searched/img3.webp 1x, ./img/often-searched/img3@2x.webp 2x" type="image/webp" />
+								<source srcset="./img/often-searched/img3.jpg 1x, ./img/often-searched/img3@2x.jpg 2x" type="image/jpeg" />
+								<img class="game-status-card__img" src="./img/often-searched/img3.jpg" alt="Assassin’s Creed" />
+							</picture>
+							<div class="game-status-card__wrap">
+								<a href="#" class="title game-status-card__title">Assassin&#8217;s Creed</a>
+								<div class="game-status-card__wrap-order">
+									<ul class="game-status-card__list-titles">
+										<li class="game-status-card__list-title">
+											<a href="#">Аккаунты</a>
+										</li>
+										<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+										<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+										<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+									</ul>
+									<ul class="game-status-card__list-buttons">
+										<li class="game-status-card__item">
+											<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+												RU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												EU
+											</button>
+										</li>
+										<li class="game-status-card__item">
+											<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+												Free
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<span class="status-card @@class game-status-card__status"> </span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<section class="stories">
+					<div class="stories__el-left"></div>
+					<h2 class="visually-hidden">stories</h2>
+					<div class="swiper" id="swiperCard" aria-label="Story Slider">
+						<button type="button" class="swiper-button-prev-stories swiper-button-prev" aria-label="@@label">
+							<svg class="icon icon--arrow" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#arrow"></use>
+							</svg>
+						</button>
+						<button type="button" class="swiper-button-next-stories swiper-button-next" aria-label="@@label">
+							<svg class="icon icon--arrow" aria-hidden="true">
+								<use href="./img/svgsprite/sprite.symbol.svg#arrow"></use>
+							</svg>
+						</button>
+						<div class="fog-left"></div>
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories1.webp 1x, ./img/stories/stories1@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories1.jpg 1x, ./img/stories/stories1@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories1.jpg" alt="roblox" />
+								</picture>
+								<span class="swiper-slide__title">Roblox</span>
+							</li>
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories2.webp 1x, ./img/stories/stories2@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories2.jpg 1x, ./img/stories/stories2@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories2.jpg" alt="roblox" />
+								</picture>
+								<span class="swiper-slide__title">ТОП мобильных игр</span>
+							</li>
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories3.webp 1x, ./img/stories/stories3@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories3.jpg 1x, ./img/stories/stories3@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories3.jpg" alt="roblox" />
+								</picture>
+								<span class="swiper-slide__title">Покупайте безопасно</span>
+							</li>
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories4.webp 1x, ./img/stories/stories4@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories4.jpg 1x, ./img/stories/stories4@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories4.jpg" alt="roblox" />
+								</picture>
+								<span class="swiper-slide__title">Продавайте с&#160;нами</span>
+							</li>
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories5.webp 1x, ./img/stories/stories5@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories5.jpg 1x, ./img/stories/stories5@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories5.jpg" alt="roblox" />
+								</picture>
+								<span class="swiper-slide__title">ТОП мобильных игр</span>
+							</li>
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories4.webp 1x, ./img/stories/stories4@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories4.jpg 1x, ./img/stories/stories4@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories4.jpg" alt="" />
+								</picture>
+								<span class="swiper-slide__title">Продавайте c&#160;нами</span>
+							</li>
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories5.webp 1x, ./img/stories/stories5@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories5.jpg 1x, ./img/stories/stories5@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories5.jpg" alt="" />
+								</picture>
+								<span class="swiper-slide__title">ТОП мобильных игр</span>
+							</li>
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories4.webp 1x, ./img/stories/stories4@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories4.jpg 1x, ./img/stories/stories4@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories4.jpg" alt="" />
+								</picture>
+								<span class="swiper-slide__title">Продавайте с&#160;нами</span>
+							</li>
+							<li class="swiper-slide">
+								<picture>
+									<source srcset="./img/stories/stories4.webp 1x, ./img/stories/stories4@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/stories/stories4.jpg 1x, ./img/stories/stories4@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/stories/stories4.jpg" alt="" />
+								</picture>
+								<span class="swiper-slide__title">Продавайте с&#160;нами</span>
+							</li>
+						</ul>
+						<div class="fog-right"></div>
+					</div>
+
+					<div class="storiesCards" id="storiesWrapper">
+						<div class="storiesCards__content" id="stories">
+							<ul class="swiper-wrapper">
+								<li
+									class="swiper-slide"
+									data-title='["Текст один", "Текст два", "Текст три"]'
+									data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+									data-button='["Текст один", "Текст два", "Текст три"]'
+									data-images='["./img/storeez-slider1.jpg", "./img/storeez-slider1.jpg", "./img/storeez-slider1.jpg" ]'
+								>
+									<button type="button" aria-label="close slider" class="close-button">
+										<svg class="icon icon--close" aria-hidden="true">
+											<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+										</svg>
+									</button>
+									<img src="" alt="" class="blurred-image" />
+									<div class="swiper-slide__wrap">
+										<div class="swiper-slide-active__item">
+											<div class="prev"></div>
+											<div class="next"></div>
+										</div>
+										<div class="storiesCards__content__bottom">
+											<span class="storiesCards__content__bottom-title"> </span>
+											<span class="storiesCards__content__bottom-text"> </span>
+											<div class="storiesCards__content__bottom-btn">
+												<button class="storiesCards__btn" type="button"></button>
+												<div class="favorites" role="button" aria-label="check like">
+													<div class="favorites">
+														<button class="favorites__btn" type="button" aria-label="Добавить в избранное">
+															<svg class="icon icon--heart" aria-hidden="true">
+																<use href="./img/svgsprite/sprite.symbol.svg#heart"></use>
+															</svg>
+														</button>
+														<span class="favorites__label"></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="progressWrapper"></div>
+									</div>
+								</li>
+								<li
+									class="swiper-slide"
+									data-title='["Текст один", "Текст два", "Текст три"]'
+									data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+									data-button='["Текст один", "Текст два", "Текст три"]'
+									data-images='["./img/storeez-slider2.jpg", "./img/storeez-slider2.jpg", "./img/storeez-slider2.jpg" ]'
+								>
+									<button type="button" aria-label="close slider" class="close-button">
+										<svg class="icon icon--close" aria-hidden="true">
+											<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+										</svg>
+									</button>
+									<img src="" alt="" class="blurred-image" />
+									<div class="swiper-slide__wrap">
+										<div class="swiper-slide-active__item">
+											<div class="prev"></div>
+											<div class="next"></div>
+										</div>
+										<div class="storiesCards__content__bottom">
+											<span class="storiesCards__content__bottom-title"> </span>
+											<span class="storiesCards__content__bottom-text"> </span>
+											<div class="storiesCards__content__bottom-btn">
+												<button class="storiesCards__btn" type="button"></button>
+												<div class="favorites" role="button" aria-label="check like">
+													<div class="favorites">
+														<button class="favorites__btn" type="button" aria-label="Добавить в избранное">
+															<svg class="icon icon--heart" aria-hidden="true">
+																<use href="./img/svgsprite/sprite.symbol.svg#heart"></use>
+															</svg>
+														</button>
+														<span class="favorites__label"></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="progressWrapper"></div>
+									</div>
+								</li>
+								<li
+									class="swiper-slide"
+									data-title='["Текст один", "Текст два", "Текст три"]'
+									data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+									data-button='["Текст один", "Текст два", "Текст три"]'
+									data-images='["./img/storeez-slider3.jpg", "./img/storeez-slider3.jpg", "./img/storeez-slider3.jpg" ]'
+								>
+									<button type="button" aria-label="close slider" class="close-button">
+										<svg class="icon icon--close" aria-hidden="true">
+											<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+										</svg>
+									</button>
+									<img src="" alt="" class="blurred-image" />
+									<div class="swiper-slide__wrap">
+										<div class="swiper-slide-active__item">
+											<div class="prev"></div>
+											<div class="next"></div>
+										</div>
+										<div class="storiesCards__content__bottom">
+											<span class="storiesCards__content__bottom-title"> </span>
+											<span class="storiesCards__content__bottom-text"> </span>
+											<div class="storiesCards__content__bottom-btn">
+												<button class="storiesCards__btn" type="button"></button>
+												<div class="favorites" role="button" aria-label="check like">
+													<div class="favorites">
+														<button class="favorites__btn" type="button" aria-label="Добавить в избранное">
+															<svg class="icon icon--heart" aria-hidden="true">
+																<use href="./img/svgsprite/sprite.symbol.svg#heart"></use>
+															</svg>
+														</button>
+														<span class="favorites__label"></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="progressWrapper"></div>
+									</div>
+								</li>
+								<li
+									class="swiper-slide"
+									data-title='["Текст один", "Текст два", "Текст три"]'
+									data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+									data-button='["Текст один", "Текст два", "Текст три"]'
+									data-images='["./img/storeez-slider4.jpg", "./img/storeez-slider4.jpg", "./img/storeez-slider4.jpg" ]'
+								>
+									<button type="button" aria-label="close slider" class="close-button">
+										<svg class="icon icon--close" aria-hidden="true">
+											<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+										</svg>
+									</button>
+									<img src="" alt="" class="blurred-image" />
+									<div class="swiper-slide__wrap">
+										<div class="swiper-slide-active__item">
+											<div class="prev"></div>
+											<div class="next"></div>
+										</div>
+										<div class="storiesCards__content__bottom">
+											<span class="storiesCards__content__bottom-title"> </span>
+											<span class="storiesCards__content__bottom-text"> </span>
+											<div class="storiesCards__content__bottom-btn">
+												<button class="storiesCards__btn" type="button"></button>
+												<div class="favorites" role="button" aria-label="check like">
+													<div class="favorites">
+														<button class="favorites__btn" type="button" aria-label="Добавить в избранное">
+															<svg class="icon icon--heart" aria-hidden="true">
+																<use href="./img/svgsprite/sprite.symbol.svg#heart"></use>
+															</svg>
+														</button>
+														<span class="favorites__label"></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="progressWrapper"></div>
+									</div>
+								</li>
+								<li
+									class="swiper-slide"
+									data-title='["Текст один", "Текст два", "Текст три"]'
+									data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+									data-button='["Текст один", "Текст два", "Текст три"]'
+									data-images='["./img/storeez-slider5.jpg", "./img/storeez-slider5.jpg", "./img/storeez-slider5.jpg" ]'
+								>
+									<button type="button" aria-label="close slider" class="close-button">
+										<svg class="icon icon--close" aria-hidden="true">
+											<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+										</svg>
+									</button>
+									<img src="" alt="" class="blurred-image" />
+									<div class="swiper-slide__wrap">
+										<div class="swiper-slide-active__item">
+											<div class="prev"></div>
+											<div class="next"></div>
+										</div>
+										<div class="storiesCards__content__bottom">
+											<span class="storiesCards__content__bottom-title"> </span>
+											<span class="storiesCards__content__bottom-text"> </span>
+											<div class="storiesCards__content__bottom-btn">
+												<button class="storiesCards__btn" type="button"></button>
+												<div class="favorites" role="button" aria-label="check like">
+													<div class="favorites">
+														<button class="favorites__btn" type="button" aria-label="Добавить в избранное">
+															<svg class="icon icon--heart" aria-hidden="true">
+																<use href="./img/svgsprite/sprite.symbol.svg#heart"></use>
+															</svg>
+														</button>
+														<span class="favorites__label"></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="progressWrapper"></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="stories__el-right"></div>
+				</section>
+
+				<section class="trend" aria-labelledby="trend-title">
+					<div class="trend__title-wrap">
+						<h2 class="trend__title" id="trend-title">В&#160;тренде</h2>
+						<svg class="icon icon--fire" aria-hidden="true">
+							<use href="./img/svgsprite/sprite.symbol.svg#fire"></use>
+						</svg>
+						<div class="trend__buttons">
+							<button type="button" class="swiper-button-prev swiper-button-prev-trend" aria-label="@@label">
+								<svg class="icon icon--arrow" aria-hidden="true">
+									<use href="./img/svgsprite/sprite.symbol.svg#arrow"></use>
+								</svg>
+							</button>
+							<button type="button" class="swiper-button-next swiper-button-next-trend" aria-label="@@label">
+								<svg class="icon icon--arrow" aria-hidden="true">
+									<use href="./img/svgsprite/sprite.symbol.svg#arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="swiper" id="trend">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<a class="swiper-slide__link" href="#">
+									<div class="trend-card">
+										<div class="trend-card__img-wrap">
+											<picture>
+												<source srcset="./img/trend-card/game1-desc.jpg" media="(min-width: 768px)" />
+												<source srcset="./img/trend-card/game1.jpg" media="(max-width: 767px)" />
+												<img class="trend-card__img" src="./img/trend-card/game1-desc.jpg" alt="Honkai Star Rail" />
+											</picture>
+											<span class="status-card status-card--hit">хит</span>
+										</div>
+
+										<div class="trend-card__wrap">
+											<h3 class="trend-card__title">Honkai Star Rail</h3>
+											<span class="trend-card__description">Встречайте нового героя-Доктор Рацио</span>
+											<span class="trend-card__link">556 предложений</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a class="swiper-slide__link" href="#">
+									<div class="trend-card">
+										<div class="trend-card__img-wrap">
+											<picture>
+												<source srcset="./img/trend-card/game2-desc.jpg" media="(min-width: 768px)" />
+												<source srcset="./img/trend-card/game2.jpg" media="(max-width: 767px)" />
+												<img class="trend-card__img" src="./img/trend-card/game2-desc.jpg" alt="Genshin Impact" />
+											</picture>
+											<span class="status-card status-card--top">топ</span>
+										</div>
+
+										<div class="trend-card__wrap">
+											<h3 class="trend-card__title">Genshin Impact</h3>
+											<span class="trend-card__description">Новый баннер &#171;Стихи из&#160;винного кубка&#187;</span>
+											<span class="trend-card__link">11 789 предложений</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a class="swiper-slide__link" href="#">
+									<div class="trend-card">
+										<div class="trend-card__img-wrap">
+											<picture>
+												<source srcset="./img/trend-card/game3-desc.jpg" media="(min-width: 768px)" />
+												<source srcset="./img/trend-card/game3.jpg" media="(max-width: 767px)" />
+												<img class="trend-card__img" src="./img/trend-card/game3-desc.jpg" alt="Armored Core VI: Fires of Rubicon" />
+											</picture>
+											<span class="status-card status-card--new">NEW</span>
+										</div>
+
+										<div class="trend-card__wrap">
+											<h3 class="trend-card__title">Armored Core VI: Fires of&#160;Rubicon</h3>
+											<span class="trend-card__description">Большое обновление с&#160;патчем 1.12</span>
+											<span class="trend-card__link">2 411 предложений</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a class="swiper-slide__link" href="#">
+									<div class="trend-card">
+										<div class="trend-card__img-wrap">
+											<picture>
+												<source srcset="./img/trend-card/game4-desc.jpg" media="(min-width: 768px)" />
+												<source srcset="./img/trend-card/game4.jpg" media="(max-width: 767px)" />
+												<img class="trend-card__img" src="./img/trend-card/game4-desc.jpg" alt="Brawl Stars" />
+											</picture>
+											<span class="status-card status-card--hit">хит</span>
+										</div>
+
+										<div class="trend-card__wrap">
+											<h3 class="trend-card__title">Brawl Stars</h3>
+											<span class="trend-card__description">Новый сезон, 10 новых бравлеров</span>
+											<span class="trend-card__link">15 789 предложений</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a class="swiper-slide__link" href="#">
+									<div class="trend-card">
+										<div class="trend-card__img-wrap">
+											<picture>
+												<source srcset="./img/trend-card/game1-desc.jpg" media="(min-width: 768px)" />
+												<source srcset="./img/trend-card/game1.jpg" media="(max-width: 767px)" />
+												<img class="trend-card__img" src="./img/trend-card/game1-desc.jpg" alt="Honkai Star Rail" />
+											</picture>
+											<span class="status-card status-card--hit">хит</span>
+										</div>
+
+										<div class="trend-card__wrap">
+											<h3 class="trend-card__title">Honkai Star Rail</h3>
+											<span class="trend-card__description">Встречайте нового героя-Доктор Рацио</span>
+											<span class="trend-card__link">556 предложений</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a class="swiper-slide__link" href="#">
+									<div class="trend-card">
+										<div class="trend-card__img-wrap">
+											<picture>
+												<source srcset="./img/trend-card/game1-desc.jpg" media="(min-width: 768px)" />
+												<source srcset="./img/trend-card/game1.jpg" media="(max-width: 767px)" />
+												<img class="trend-card__img" src="./img/trend-card/game1-desc.jpg" alt="Honkai Star Rail" />
+											</picture>
+											<span class="status-card status-card--hit">хит</span>
+										</div>
+
+										<div class="trend-card__wrap">
+											<h3 class="trend-card__title">Honkai Star Rail</h3>
+											<span class="trend-card__description">Встречайте нового героя-Доктор Рацио</span>
+											<span class="trend-card__link">556 предложений</span>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="trend-pagination container" aria-label="Trend pagination controls"></div>
+				</section>
+				<section class="games" aria-labelledby="games-title">
+					<div class="games__wrap">
+						<div class="games__wrap-title">
+							<h2 class="games__title" id="games-title">
+								Игры
+							</h2>
+							<img class="games__icon" src="./img/game.svg" alt="game" aria-hidden="true" />
+						</div>
+						<ul class="games__filters" aria-label="Game filters">
+							<li class="games__filter" role="presentation">
+								<button class="btn active games__filter-btn" type="button" aria-label="@@label">
+									Всё
+								</button>
+							</li>
+							<li class="games__filter" role="presentation">
+								<button class="btn  games__filter-btn" type="button" aria-label="@@label">
+									Игры
+								</button>
+							</li>
+							<li class="games__filter" role="presentation">
+								<button class="btn  games__filter-btn" type="button" aria-label="@@label">
+									Соцсети
+								</button>
+							</li>
+							<li class="games__filter" role="presentation">
+								<button class="btn  games__filter-btn" type="button" aria-label="@@label">
+									Фриланс
+								</button>
+							</li>
+						</ul>
+						<div class="games__list-wrap">
+							<div role="list" class="games__list">
+								<div class="games__list-cards">
+									<div class="card game-status-card">
+										<picture>
+											<source srcset="./img/game-card.webp 1x, ./img/game-card@2x.webp 2x" type="image/webp" />
+											<source srcset="./img/game-card.jpg 1x, ./img/game-card@2x.jpg 2x" type="image/jpeg" />
+											<img class="game-status-card__img" src="./img/game-card.jpg" alt="AFK Arena" />
+										</picture>
+										<div class="game-status-card__wrap">
+											<a href="#" class="title game-status-card__title">AFK Arena</a>
+											<div class="game-status-card__wrap-order">
+												<ul class="game-status-card__list-titles">
+													<li class="game-status-card__list-title">
+														<a href="#">Аккаунты</a>
+													</li>
+													<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+													<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+													<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+												</ul>
+												<ul class="game-status-card__list-buttons">
+													<li class="game-status-card__item">
+														<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+															RU
+														</button>
+													</li>
+													<li class="game-status-card__item">
+														<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+															EU
+														</button>
+													</li>
+													<li class="game-status-card__item">
+														<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+															Free
+														</button>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<span class="status-card status-card--hit game-status-card__status">
+											хит
+										</span>
+									</div>
+									<div class="card game-status-card">
+										<picture>
+											<source srcset="./img/game-card.webp 1x, ./img/game-card@2x.webp 2x" type="image/webp" />
+											<source srcset="./img/game-card.jpg 1x, ./img/game-card@2x.jpg 2x" type="image/jpeg" />
+											<img class="game-status-card__img" src="./img/game-card.jpg" alt="AFK Arena" />
+										</picture>
+										<div class="game-status-card__wrap">
+											<a href="#" class="title game-status-card__title">AFK Arena</a>
+											<div class="game-status-card__wrap-order">
+												<ul class="game-status-card__list-titles">
+													<li class="game-status-card__list-title">
+														<a href="#">Аккаунты</a>
+													</li>
+													<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+													<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+													<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+												</ul>
+												<ul class="game-status-card__list-buttons">
+													<li class="game-status-card__item">
+														<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+															RU
+														</button>
+													</li>
+													<li class="game-status-card__item">
+														<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+															EU
+														</button>
+													</li>
+													<li class="game-status-card__item">
+														<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+															Free
+														</button>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<span class="status-card status-card--top game-status-card__status">
+											топ
+										</span>
+									</div>
+									<div class="card game-status-card">
+										<picture>
+											<source srcset="./img/game-card.webp 1x, ./img/game-card@2x.webp 2x" type="image/webp" />
+											<source srcset="./img/game-card.jpg 1x, ./img/game-card@2x.jpg 2x" type="image/jpeg" />
+											<img class="game-status-card__img" src="./img/game-card.jpg" alt="AFK Arena" />
+										</picture>
+										<div class="game-status-card__wrap">
+											<a href="#" class="title game-status-card__title">AFK Arena</a>
+											<div class="game-status-card__wrap-order">
+												<ul class="game-status-card__list-titles">
+													<li class="game-status-card__list-title">
+														<a href="#">Аккаунты</a>
+													</li>
+													<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+													<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+													<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+												</ul>
+												<ul class="game-status-card__list-buttons">
+													<li class="game-status-card__item">
+														<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+															RU
+														</button>
+													</li>
+													<li class="game-status-card__item">
+														<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+															EU
+														</button>
+													</li>
+													<li class="game-status-card__item">
+														<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+															Free
+														</button>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<span class="status-card status-card--hit game-status-card__status">
+											хит
+										</span>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">AFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">AFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">BFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">BFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">BFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">BFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">CFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">CFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">CFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">DK&#160;Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">DFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">DFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">DFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">FFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">FK&#160;Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">FFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">FFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">KFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">KFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">KK&#160;Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">KFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">LFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">LFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">MFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">MM&#160;Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+									<div class=" card game-card">
+										<a href="#" class="title game-card__title">KFK Arena</a>
+										<ul class="game-card__list-titles">
+											<li class="game-card__list-title">
+												<a href="#"> Аккаунты</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Алмазы</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Донат</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Услуги</a>
+											</li>
+											<li class="game-card__list-title">
+												<a href="#">Прочее</a>
+											</li>
+										</ul>
+										<ul class="game-card__list-buttons">
+											<li class="game-card__item">
+												<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+													RU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													EU
+												</button>
+											</li>
+											<li class="game-card__item">
+												<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+													US
+												</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="advertising-wrap" aria-labelledby="advertising-title">
+									<div class="advertising  advertising--blue">
+										<div class="advertising__img-wrap">
+											<picture aria-hidden="true">
+												<source srcset="./img/advertising/advertising@2x.jpg 2x, ./img/advertising/advertising.jpg 1x" media="(max-width: 768px)" />
+												<source
+													srcset="./img/advertising/advertising-decst@2x.jpg 2x, ./img/advertising/advertising-decst.jpg 1x"
+													media="(min-width: 768px)"
+												/>
+												<img class="advertising__img" src="./img/advertising/advertising.jpg" alt="game img" />
+											</picture>
+											<div class="advertising__img-label-wrap" aria-label="Seller and Offer Info">
+												<span class="advertising__img-label">879 продавцов</span>
+												<span class="advertising__img-label">11 574 предложения</span>
+											</div>
+										</div>
+										<div class="advertising__content">
+											<h3 class="advertising__title" id="advertising-title">
+												Roblox
+											</h3>
+											<div class="advertising__list-wrap" aria-labelledby="possibilities-title">
+												<span class="advertising__list-title" id="possibilities-title">Возможности</span>
+												<ul class="advertising__list advertising__list--first">
+													<li class="advertising__list-item">
+														<a href="#"> Робуксы </a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Подарочные карты</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Донат робуксов (паки)</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Premium</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Аккаунты</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Скины</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Прочее</a>
+													</li>
+												</ul>
+											</div>
+											<div class="advertising__list-wrap" aria-labelledby="games-title">
+												<span class="advertising__list-title" id="games-title">Игры</span>
+												<ul class="advertising__list advertising__list--second">
+													<li class="advertising__list-item">
+														<a href="#">GPO</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Pet Simulator X</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">YBA</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Jailbreak</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">MM2</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Adopt Me</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">AUT</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Blox Fruits</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">ASTD</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">King Legacy</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Anime Adventures</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Project Slayers</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Arm Wrestle Simu</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Prime Gaming</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Toilet Tower Def</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Studio</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Blade Ball</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Da&#160;Hood</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Tower Defense Si</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Jujutsu Infinite</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Прочее</a>
+													</li>
+												</ul>
+											</div>
+											<span class="status-card status-card--top advertising__status" aria-label="top status">
+												топ
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="advertising-wrap" aria-labelledby="advertising-title">
+									<div class="advertising  advertising--red">
+										<div class="advertising__img-wrap">
+											<picture aria-hidden="true">
+												<source srcset="./img/advertising/advertising@2x.jpg 2x, ./img/advertising/advertising.jpg 1x" media="(max-width: 768px)" />
+												<source
+													srcset="./img/advertising/advertising-decst@2x.jpg 2x, ./img/advertising/advertising-decst.jpg 1x"
+													media="(min-width: 768px)"
+												/>
+												<img class="advertising__img" src="./img/advertising/advertising.jpg" alt="game img" />
+											</picture>
+											<div class="advertising__img-label-wrap" aria-label="Seller and Offer Info">
+												<span class="advertising__img-label">879 продавцов</span>
+												<span class="advertising__img-label">11 574 предложения</span>
+											</div>
+										</div>
+										<div class="advertising__content">
+											<h3 class="advertising__title" id="advertising-title">
+												Roblox
+											</h3>
+											<div class="advertising__list-wrap" aria-labelledby="possibilities-title">
+												<span class="advertising__list-title" id="possibilities-title">Возможности</span>
+												<ul class="advertising__list advertising__list--first">
+													<li class="advertising__list-item">
+														<a href="#"> Робуксы </a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Подарочные карты</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Донат робуксов (паки)</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Premium</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Аккаунты</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Скины</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Прочее</a>
+													</li>
+												</ul>
+											</div>
+											<div class="advertising__list-wrap" aria-labelledby="games-title">
+												<span class="advertising__list-title" id="games-title">Игры</span>
+												<ul class="advertising__list advertising__list--second">
+													<li class="advertising__list-item">
+														<a href="#">GPO</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Pet Simulator X</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">YBA</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Jailbreak</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">MM2</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Adopt Me</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">AUT</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Blox Fruits</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">ASTD</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">King Legacy</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Anime Adventures</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Project Slayers</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Arm Wrestle Simu</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Prime Gaming</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Toilet Tower Def</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Studio</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Blade Ball</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Da&#160;Hood</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Tower Defense Si</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Jujutsu Infinite</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Прочее</a>
+													</li>
+												</ul>
+											</div>
+											<span class="status-card status-card--top advertising__status" aria-label="top status">
+												топ
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="advertising-wrap" aria-labelledby="advertising-title">
+									<div class="advertising  advertising--purple">
+										<div class="advertising__img-wrap">
+											<picture aria-hidden="true">
+												<source srcset="./img/advertising/advertising@2x.jpg 2x, ./img/advertising/advertising.jpg 1x" media="(max-width: 768px)" />
+												<source
+													srcset="./img/advertising/advertising-decst@2x.jpg 2x, ./img/advertising/advertising-decst.jpg 1x"
+													media="(min-width: 768px)"
+												/>
+												<img class="advertising__img" src="./img/advertising/advertising.jpg" alt="game img" />
+											</picture>
+											<div class="advertising__img-label-wrap" aria-label="Seller and Offer Info">
+												<span class="advertising__img-label">879 продавцов</span>
+												<span class="advertising__img-label">11 574 предложения</span>
+											</div>
+										</div>
+										<div class="advertising__content">
+											<h3 class="advertising__title" id="advertising-title">
+												Roblox
+											</h3>
+											<div class="advertising__list-wrap" aria-labelledby="possibilities-title">
+												<span class="advertising__list-title" id="possibilities-title">Возможности</span>
+												<ul class="advertising__list advertising__list--first">
+													<li class="advertising__list-item">
+														<a href="#"> Робуксы </a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Подарочные карты</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Донат робуксов (паки)</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Premium</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Аккаунты</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Скины</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Прочее</a>
+													</li>
+												</ul>
+											</div>
+											<div class="advertising__list-wrap" aria-labelledby="games-title">
+												<span class="advertising__list-title" id="games-title">Игры</span>
+												<ul class="advertising__list advertising__list--second">
+													<li class="advertising__list-item">
+														<a href="#">GPO</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Pet Simulator X</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">YBA</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Jailbreak</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">MM2</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Adopt Me</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">AUT</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Blox Fruits</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">ASTD</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">King Legacy</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Anime Adventures</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Project Slayers</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Arm Wrestle Simu</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Prime Gaming</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Toilet Tower Def</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Studio</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Blade Ball</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Da&#160;Hood</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Tower Defense Si</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Jujutsu Infinite</a>
+													</li>
+													<li class="advertising__list-item">
+														<a href="#">Прочее</a>
+													</li>
+												</ul>
+											</div>
+											<span class="status-card status-card--top advertising__status" aria-label="top status">
+												топ
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<nav class="games__nav" aria-labelledby="nav-abc-title">
+								<h2 id="nav-abc-title" class="visually-hidden">Навигация по&#160;играм</h2>
+								<ul class="nav games__nav-list" id="nav-abc" role="navigation" aria-label="Alphabetical Navigation">
+									<li><a class="highlighted" href="#letterA">A</a></li>
+									<li><a href="#letterB">B</a></li>
+									<li><a href="#letterC">C</a></li>
+									<li><a href="#letterD">D</a></li>
+									<li><a href="#letterE">E</a></li>
+									<li><a href="#letterF">F</a></li>
+									<li><a href="#letterG">G</a></li>
+									<li><a href="#letterH">H</a></li>
+									<li><a href="#letterI">I</a></li>
+									<li><a href="#letterK">K</a></li>
+									<li><a href="#letterL">L</a></li>
+									<li><a href="#letterM">M</a></li>
+									<li><a href="#letterN">N</a></li>
+									<li><a href="#letterO">O</a></li>
+									<li><a href="#letterP">P</a></li>
+									<li><a href="#letterR">R</a></li>
+									<li><a href="#letterS">S</a></li>
+									<li><a href="#letterT">T</a></li>
+									<li><a href="#letterU">U</a></li>
+									<li><a href="#letterV">V</a></li>
+									<li><a href="#letterW">W</a></li>
+									<li><a href="#letterX">X</a></li>
+									<li><a href="#letterY">Y</a></li>
+									<li><a href="#letterZ">Z</a></li>
+									<li><a href="#letterА">А</a></li>
+									<li><a href="#letterВ">В</a></li>
+									<li><a href="#letterГ">Г</a></li>
+									<li><a href="#letterД">Д</a></li>
+									<li><a href="#letterК">К</a></li>
+									<li><a href="#letterЛ">Л</a></li>
+									<li><a href="#letterМ">М</a></li>
+									<li><a href="#letterО">О</a></li>
+									<li><a href="#letterП">П</a></li>
+									<li><a href="#letterР">Р</a></li>
+									<li><a href="#letterТ">Т</a></li>
+									<li><a href="#letterШ">Ш</a></li>
+									<li><a href="#letter8">8</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="secret-chat">
+							<div class="secret-chat__wrap">
+								<div class="chat-header chat-mobile">
+									<h2 class="chat-header__title">Секретный чат</h2>
+									<div class="chat-header__info-wrap">
+										<svg class="icon icon--info">
+											<use href="./img/svgsprite/sprite.symbol.svg#info"></use>
+										</svg>
+										<span class="chat-header__alert">Продажа в&#160;чате запрещена! см. <a href="#">Правила сервиса</a></span>
+									</div>
+								</div>
+
+								<div class="chat-messages">
+									<div class="chat-header-wrap">
+										<div class="chat-header chat-tablet">
+											<h2 class="chat-header__title">Секретный чат</h2>
+											<div class="chat-header__info-wrap">
+												<svg class="icon icon--info">
+													<use href="./img/svgsprite/sprite.symbol.svg#info"></use>
+												</svg>
+												<span class="chat-header__alert">Продажа в&#160;чате запрещена! см. <a href="#">Правила сервиса</a></span>
+											</div>
+										</div>
+										<div class="complaint">
+											<button class="complaint__btn" type="submit" aria-label="Пожаловаться">
+												<span class="complaint__icon-wrap">
+													<svg class="icon icon--alert">
+														<use href="./img/svgsprite/sprite.symbol.svg#alert"></use>
+													</svg>
+												</span>
+												<span class="chat-mobile">
+													Пожаловаться
+												</span>
+											</button>
+											<button type="button" class="complaint__btn-new">
+												В&#160;новой вкладке
+												<svg class="icon icon--arrow-diagonal">
+													<use href="./img/svgsprite/sprite.symbol.svg#arrow-diagonal"></use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="chat-content">
+										<ul class="message">
+											<li class="message__item">
+												<div class="avatar">
+													<picture>
+														<source srcset="./../img/avatar.webp 1x, ./../img/avatar@2x.webp 2x" type="image/webp" />
+														<source srcset="./../img/avatar.png 1x, ./../img/avatar@2x.png 2x" type="image/png" />
+														<img src="./../img/avatar.png" alt="Avatar" />
+													</picture>
+												</div>
+												<div class="message__item-content">
+													<span class="message__item-content-username">K1tsune3</span>
+													<span class="message__item-content-text">
+														Зарубеж карты есть у&#160;кого если нет пиши мне
+													</span>
+													<time class="message__item-content-time">20:34</time>
+												</div>
+											</li>
+											<li class="message__item">
+												<div class="avatar">
+													<picture>
+														<source srcset="./../img/avatar.webp 1x, ./../img/avatar@2x.webp 2x" type="image/webp" />
+														<source srcset="./../img/avatar.png 1x, ./../img/avatar@2x.png 2x" type="image/png" />
+														<img src="./../img/avatar.png" alt="Avatar" />
+													</picture>
+												</div>
+												<div class="message__item-content">
+													<span class="message__item-content-username">K1tsune3</span>
+													<span class="message__item-content-text">
+														Зарубеж карты есть у&#160;кого если нет пиши мне
+													</span>
+													<time class="message__item-content-time">20:34</time>
+												</div>
+											</li>
+											<li class="message__item">
+												<div class="avatar">
+													<picture>
+														<source srcset="./../img/avatar.webp 1x, ./../img/avatar@2x.webp 2x" type="image/webp" />
+														<source srcset="./../img/avatar.png 1x, ./../img/avatar@2x.png 2x" type="image/png" />
+														<img src="./../img/avatar.png" alt="Avatar" />
+													</picture>
+												</div>
+												<div class="message__item-content">
+													<span class="message__item-content-username">K1tsune3</span>
+													<span class="message__item-content-text">
+														Зарубеж карты есть у&#160;кого если нет пиши мне Зарубеж карты есть у&#160;кого если нет пиши мне Зарубеж карты есть
+														у&#160;кого если нет пиши мне
+													</span>
+													<time class="message__item-content-time">20:34</time>
+												</div>
+											</li>
+											<li class="message__item">
+												<div class="avatar">
+													<picture>
+														<source srcset="./../img/avatar.webp 1x, ./../img/avatar@2x.webp 2x" type="image/webp" />
+														<source srcset="./../img/avatar.png 1x, ./../img/avatar@2x.png 2x" type="image/png" />
+														<img src="./../img/avatar.png" alt="Avatar" />
+													</picture>
+												</div>
+												<div class="message__item-content">
+													<span class="message__item-content-username">K1tsune3</span>
+													<span class="message__item-content-text">
+														Зарубеж карты есть у&#160;кого если нет пиши мне
+													</span>
+													<time class="message__item-content-time">20:34</time>
+												</div>
+											</li>
+											<li class="message__item">
+												<div class="avatar">
+													<picture>
+														<source srcset="./../img/avatar.webp 1x, ./../img/avatar@2x.webp 2x" type="image/webp" />
+														<source srcset="./../img/avatar.png 1x, ./../img/avatar@2x.png 2x" type="image/png" />
+														<img src="./../img/avatar.png" alt="Avatar" />
+													</picture>
+												</div>
+												<div class="message__item-content">
+													<span class="message__item-content-username">K1tsune3</span>
+													<span class="message__item-content-text">
+														Зарубеж карты есть у&#160;кого если нет пиши мне
+													</span>
+													<time class="message__item-content-time">20:34</time>
+												</div>
+											</li>
+										</ul>
+										<div class="my-message">
+											<span class="my-message__text">
+												куплю прайм статус на&#160;аккаунт кс2 подарком за&#160;1000руб в&#160;лс
+											</span>
+											<time class="my-message__time">20:34</time>
+										</div>
+									</div>
+									<div class="chat-input">
+										<input type="text" placeholder="Ваше сообщение" />
+										<button type="submit">
+											<svg class="icon icon--arrow">
+												<use href="./img/svgsprite/sprite.symbol.svg#arrow"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class="footer container">
+			<ul class="soc">
+				<li class="soc__item">
+					<a href="#" class="soc__item-link" aria-label="vkontact link" target="_blank">
+						<svg class="icon icon--vk">
+							<use href="./img/svgsprite/sprite.symbol.svg#vk"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="soc__item">
+					<a href="#" class="soc__item-link" aria-label="telegram link" target="_blank">
+						<svg class="icon icon--tg">
+							<use href="./img/svgsprite/sprite.symbol.svg#tg"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="soc__item">
+					<a href="#" class="soc__item-link" aria-label="youtube link" target="_blank">
+						<svg class="icon icon--youtube">
+							<use href="./img/svgsprite/sprite.symbol.svg#youtube"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="soc__item">
+					<a href="#" class="soc__item-link" aria-label="facebook link" target="_blank">
+						<svg class="icon icon--facebook">
+							<use href="./img/svgsprite/sprite.symbol.svg#facebook"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+			<ul class="policies">
+				<li class="policies__item">
+					<button type="button" class="policies__item-btn">
+						<span>Политика конфиденциальности</span>
+					</button>
+				</li>
+				<li class="policies__item">
+					<button type="button" class="policies__item-btn" id="cookie-policy">
+						<span>Политика cookies</span>
+					</button>
+				</li>
+			</ul>
+		</footer>
+
+		<div class="auth-modal" id="auth-modal" style="display:none">
+			<div class="auth-modal__header">
+				<button type="button" class="auth-modal__header-back" aria-label="return to main page">
+					<svg class="icon icon--arrow-back">
+						<use href="./img/svgsprite/sprite.symbol.svg#arrow-back"></use>
+					</svg>
+				</button>
+				<svg xmlns="http://www.w3.org/2000/svg" width="87" height="32" viewBox="0 0 87 32" fill="none">
+					<g clip-path="url(#clip0_464_1622)">
+						<path
+							d="M80.9054 23.582V20.1861L87.5 8.42041H83.7996L79.4148 16.6685H79.2263L74.7487 8.42041H70.9845L77.5791 20.1861V23.582H80.9054ZM65.3411 12.0595H65.5586L67.9859 18.0032H62.9167L65.3411 12.0595ZM63.8186 8.42041L56.9137 23.582H60.4285L61.6407 20.8845H69.2909L70.506 23.582H74.1136L67.2087 8.42041H63.8186ZM52.3375 16.7279H47.9817V11.3017H52.12C52.99 11.3017 53.7353 11.6043 54.2341 12.1783C54.6082 12.6646 54.8866 13.3009 54.8866 14.0304C54.8866 14.7882 54.6372 15.4244 54.1732 15.939C53.7353 16.4565 53.1118 16.7279 52.3375 16.7279ZM58.2158 14.0304C58.2158 12.4837 57.5923 11.149 56.5976 10.1792C55.5101 9.05662 53.9847 8.42041 52.2447 8.42041H44.6554V23.582H47.9817V19.6092H52.2447C53.9847 19.6092 55.571 18.9108 56.6614 17.8194C57.6242 16.8184 58.2158 15.4838 58.2158 14.0304ZM28.3081 17.1521V8.42041H24.9818V17.3047C24.9818 18.4245 24.6077 19.3067 24.0161 19.9118C23.3955 20.548 22.5255 20.9439 21.4351 20.9439C20.3795 20.9439 19.5066 20.5791 18.8222 19.8835C18.1697 19.2445 17.8275 18.3651 17.8275 17.3047V8.42041H14.5012V17.1521C14.5012 19.0013 15.2465 20.6696 16.4587 21.9137C17.6709 23.0957 19.321 23.8252 21.4351 23.8252C23.3955 23.8252 25.0137 23.1579 26.2259 22.0664C27.5628 20.8223 28.3081 19.0946 28.3081 17.1521ZM0.5 8.42041V23.582H3.8292V17.6384H11.5722V14.7571H3.8292V11.33H12.535V8.42041H0.5Z"
+							fill="#151515"
+						/>
+						<path
+							d="M28.6995 8.42061L36.4802 0L44.2638 8.42061H40.6011V18.337L32.1418 8.42061H28.6995ZM44.2638 23.5822L36.4802 32L28.6995 23.5822H32.3912V13.6347L40.8186 23.5822H44.2638Z"
+							fill="#255FE4"
+						/>
+					</g>
+					<defs>
+						<clipPath id="clip0_464_1622">
+							<rect width="87" height="32" fill="white" />
+						</clipPath>
+					</defs>
+				</svg>
+			</div>
+			<div class="auth-modal__content">
+				<button type="button" class="auth-modal__close-btn">
+					<svg class="icon icon--close">
+						<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+					</svg>
+				</button>
+				<ul class="auth-modal__tabs-list">
+					<li class="auth-modal__tabs-item">
+						<button
+							type="button"
+							class="auth-modal__tabs-item-btn auth-modal__tabs-item-btn--active"
+							aria-selected="true"
+							role="tab"
+							aria-label="Вход для авторизации"
+							data-tabs-path="login"
+						>
+							Вход
+						</button>
+					</li>
+					<li class="auth-modal__tabs-item">
+						<button type="button" class="auth-modal__tabs-item-btn" data-tabs-path="registration" aria-selected="true" aria-label="Зарегистрироваться" role="tab">
+							Регистрация
+						</button>
+					</li>
+				</ul>
+				<div class="auth-modal__tabs-content auth-modal__tabs-content--active" role="tabpanel" data-tabs-target="login">
+					<form class="login">
+						<div class="login__input-wrap">
+							<label for="login-name" class="visually-hidden">Имя или почта</label>
+							<input type="text" placeholder="Имя или почта" class="input login__input-name" id="login-name" autocomplete="off" />
+							<span class="inputError"></span>
+							<span class="inputInfo"></span>
+						</div>
+						<div class="login__input-wrap">
+							<label for="login-password" class="visually-hidden">Пароль</label>
+							<div class="input-wrap">
+								<input
+									type="password"
+									placeholder="Пароль"
+									class="input input-password
+ login__input-password"
+									id="login-password"
+									autocomplete="new-password"
+								/>
+								<button type="button" class="input-password__btn">
+									<svg class="icon icon--no-eye show-password">
+										<use href="./img/svgsprite/sprite.symbol.svg#no-eye"></use>
+									</svg>
+									<svg class="icon icon--eye hide-password">
+										<use href="./img/svgsprite/sprite.symbol.svg#eye"></use>
+									</svg>
+								</button>
+							</div>
+
+							<span class="inputError"></span>
+							<span class="inputInfo"></span>
+						</div>
+						<a class="login__link" href="#">Забыли пароль?</a>
+						<!--            <div class="login__capcha">-->
+						<!--            </div>-->
+						<div class="login__btns-wrap">
+							<button class="btn active login__btn" type="submit" aria-label="@@label">
+								Войти
+							</button>
+							<button class="login__btn login__btn--gray" aria-label="Войти через соцсеть Вконтакте" type="submit">
+								<svg class="icon icon--vk">
+									<use href="./img/svgsprite/sprite.symbol.svg#vk"></use>
+								</svg>
+								<span>Войти через ВКонтакте</span>
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="auth-modal__tabs-content" data-tabs-target="registration" role="tabpanel">
+					<form class="registration">
+						<button class="registration__btn registration__btn--gray" aria-label="Регистрация через соцсеть Вконтакте" type="submit">
+							<svg class="icon icon--vk">
+								<use href="./img/svgsprite/sprite.symbol.svg#vk"></use>
+							</svg>
+							<span>Регистрация через VK&#160;ID</span>
+						</button>
+						<div class="registration__input-wrap">
+							<label for="registration-nickname" class="visually-hidden">Имя или ник</label>
+							<input type="text" placeholder="Имя или ник" class="input registration__input-name" id="registration-nickname" autocomplete="off" />
+							<span class="inputError"></span>
+							<span class="inputInfo">Латинские буквы и&#160;цифры</span>
+						</div>
+						<div class="registration__input-wrap">
+							<label for="registration-email" class="visually-hidden">Почта</label>
+							<input type="email" placeholder="Почта" class="input registration__input-email" id="registration-email" autocomplete="off" />
+							<span class="inputError"></span>
+							<span class="inputInfo">Требуется для активации учетной записи</span>
+						</div>
+						<div class="registration__input-wrap">
+							<label for="registration-password" class="visually-hidden">Пароль</label>
+							<div class="input-wrap">
+								<input
+									type="password"
+									placeholder="Пароль"
+									class="input input-password
+ registration__input-password"
+									id="registration-password"
+									autocomplete="new-password"
+								/>
+								<button type="button" class="input-password__btn">
+									<svg class="icon icon--no-eye show-password">
+										<use href="./img/svgsprite/sprite.symbol.svg#no-eye"></use>
+									</svg>
+									<svg class="icon icon--eye hide-password">
+										<use href="./img/svgsprite/sprite.symbol.svg#eye"></use>
+									</svg>
+								</button>
+							</div>
+
+							<span class="inputError"></span>
+							<span class="inputInfo">Минимум 6 символов</span>
+						</div>
+						<div class="agreement">
+							<label class="agreement__checkbox-label">
+								<input type="checkbox" class="checkbox" />
+								<span class="checkbox-view">
+									<svg class="icon--check" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M14.6888 3.76577C14.7553 3.82397 14.8095 3.89482 14.8484 3.97418C14.8873 4.05354 14.9099 4.13984 14.9152 4.22805C14.9204 4.31626 14.908 4.40463 14.8787 4.48801C14.8495 4.5714 14.804 4.64814 14.7448 4.71377L7.73546 12.4931C7.67601 12.559 7.604 12.6123 7.52366 12.65C7.44332 12.6877 7.35626 12.709 7.26759 12.7126C7.17892 12.7162 7.09043 12.702 7.0073 12.671C6.92416 12.6399 6.84806 12.5926 6.78346 12.5318L2.72746 8.71377C2.60578 8.59758 2.53211 8.43998 2.521 8.27211C2.50989 8.10424 2.56215 7.9383 2.66746 7.8071C2.72431 7.73597 2.79501 7.67713 2.87529 7.63416C2.95557 7.59119 3.04374 7.56498 3.13445 7.55712C3.22517 7.54927 3.31653 7.55993 3.403 7.58846C3.48947 7.61699 3.56924 7.6628 3.63746 7.7231L6.78413 10.5538C6.91552 10.672 7.08849 10.7333 7.26501 10.724C7.44153 10.7148 7.60716 10.6358 7.72546 10.5044L13.7541 3.81977C13.8715 3.68966 14.0353 3.61098 14.2103 3.60075C14.3852 3.59052 14.5571 3.64956 14.6888 3.7651V3.76577Z"
+											fill="#151515"
+										/>
+									</svg>
+								</span>
+								<span class="checkbox-description">
+									<a href="#"> С&#160;лицензионным соглашением</a>, включая <a href="#">агентский договор</a>, <a href="#">правилами сайта </a>ознакомился, принимаю
+									в&#160;полном объеме
+								</span>
+							</label>
+						</div>
+						<!--            <div class="registration__capcha">-->
+						<!--            </div>-->
+
+						<button class="btn active registration__button" type="submit" aria-label="@@label">
+							Зарегистрироваться
+						</button>
+						<a class="registration__link" id="existing-account-link" href="#">Уже есть учетная запись?</a>
+					</form>
+				</div>
+				<div class="auth-modal__tabs-content" data-tabs-target="recovery" role="tabpanel">
+					<form class="recovery">
+						<span class="recovery__title">
+							Восстановление пароля
+						</span>
+						<div class="recovery__input-wrap">
+							<label for="recovery-nickname" class="visually-hidden">Имя или ник</label>
+							<input type="text" placeholder="Имя или ник" class="input recovery__input-name" id="recovery-nickname" autocomplete="off" />
+							<span class="inputError"></span>
+							<span class="inputInfo">Ссылка для восстановления придет на&#160;почту</span>
+						</div>
+						<!--            <div class="recovery__capcha">-->
+						<!--            </div>-->
+
+						<button class="btn active recovery__btn" type="submit" aria-label="@@label">
+							Восстановить
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="first-favorites-menu visually-hidden">
+			<div class="first-favorites-menu__top">
+				<div>
+					<svg class="icon icon--heart">
+						<use href="./img/svgsprite/sprite.symbol.svg#heart"></use>
+					</svg>
+					<span class="first-favorites-menu__top-title">Избранное</span>
+				</div>
+				<button class="first-favorites-menu_top-btn" type="button" aria-label="вернуться назад">
+					<svg class="icon icon--arrow-small">
+						<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+					</svg>
+				</button>
+			</div>
+			<div class="favorites-message-modal visually-hidden container" role="dialog" id="favorites-message-modal" aria-modal="true">
+				<button type="button" class="favorites-message-modal__close-btn" aria-label="Close modal">
+					<svg class="icon icon--close" aria-hidden="true">
+						<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+					</svg>
+				</button>
+				<div class="favorites-message-modal__content">
+					<span class="favorites-message-modal__title" role="heading">
+						Теперь ваши игры всегда рядом
+					</span>
+					<p class="favorites-message-modal__message">
+						В&#160;<a href="#">настройках</a> можно выбрать, будут&#160;ли игры в&#160;избранном отображаться в&#160;раскрытом виде или доступны через иконку.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="favorites-menu visually-hidden">
+			<div class="favorites-menu__top">
+				<button class="favorites-menu__top-btn" type="button" aria-label="вернуться назад">
+					<svg class="icon icon--arrow-small">
+						<use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+					</svg>
+				</button>
+				<span class="favorites-menu__top-title">Избранное</span>
+			</div>
+			<div class="favorites-menu__list-cards">
+				<div class="card game-status-card">
+					<picture>
+						<source srcset="./img/often-searched/img1.webp 1x, ./img/often-searched/img1@2x.webp 2x" type="image/webp" />
+						<source srcset="./img/often-searched/img1.jpg 1x, ./img/often-searched/img1@2x.jpg 2x" type="image/jpeg" />
+						<img class="game-status-card__img" src="./img/often-searched/img1.jpg" alt="Aion Classic" />
+					</picture>
+					<div class="game-status-card__wrap">
+						<a href="#" class="title game-status-card__title">Aion Classic</a>
+						<div class="game-status-card__wrap-order">
+							<ul class="game-status-card__list-titles">
+								<li class="game-status-card__list-title">
+									<a href="#">Аккаунты</a>
+								</li>
+								<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+								<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+								<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+							</ul>
+							<ul class="game-status-card__list-buttons">
+								<li class="game-status-card__item">
+									<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+										RU
+									</button>
+								</li>
+								<li class="game-status-card__item">
+									<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+										EU
+									</button>
+								</li>
+								<li class="game-status-card__item">
+									<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+										Free
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<span class="status-card status-card--hit game-status-card__status">
+						ХИТ
+					</span>
+				</div>
+				<div class="card game-status-card">
+					<picture>
+						<source srcset="./img/often-searched/img2.webp 1x, ./img/often-searched/img2@2x.webp 2x" type="image/webp" />
+						<source srcset="./img/often-searched/img2.jpg 1x, ./img/often-searched/img2@2x.jpg 2x" type="image/jpeg" />
+						<img class="game-status-card__img" src="./img/often-searched/img2.jpg" alt="Assassin’s Creed" />
+					</picture>
+					<div class="game-status-card__wrap">
+						<a href="#" class="title game-status-card__title">Assassin&#8217;s Creed</a>
+						<div class="game-status-card__wrap-order">
+							<ul class="game-status-card__list-titles">
+								<li class="game-status-card__list-title">
+									<a href="#">Аккаунты</a>
+								</li>
+								<li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+								<li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+								<li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+							</ul>
+							<ul class="game-status-card__list-buttons">
+								<li class="game-status-card__item">
+									<button class="btn active game-status-card__item-btn" type="button" aria-label="@@label">
+										RU
+									</button>
+								</li>
+								<li class="game-status-card__item">
+									<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+										EU
+									</button>
+								</li>
+								<li class="game-status-card__item">
+									<button class="btn  game-status-card__item-btn" type="button" aria-label="@@label">
+										Free
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<span class="status-card status-card--top game-status-card__status">
+						ТОП
+					</span>
+				</div>
+				<div class=" card game-card">
+					<a href="#" class="title game-card__title">Aion Classic</a>
+					<ul class="game-card__list-titles">
+						<li class="game-card__list-title">
+							<a href="#"> Аккаунты</a>
+						</li>
+						<li class="game-card__list-title">
+							<a href="#">Алмазы</a>
+						</li>
+						<li class="game-card__list-title">
+							<a href="#">Донат</a>
+						</li>
+						<li class="game-card__list-title">
+							<a href="#">Услуги</a>
+						</li>
+						<li class="game-card__list-title">
+							<a href="#">Прочее</a>
+						</li>
+					</ul>
+					<ul class="game-card__list-buttons">
+						<li class="game-card__item">
+							<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+								RU
+							</button>
+						</li>
+						<li class="game-card__item">
+							<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+								EU
+							</button>
+						</li>
+						<li class="game-card__item">
+							<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+								US
+							</button>
+						</li>
+					</ul>
+				</div>
+				<div class=" card game-card">
+					<a href="#" class="title game-card__title">Assassin&#8217;s Creed</a>
+					<ul class="game-card__list-titles">
+						<li class="game-card__list-title">
+							<a href="#"> Аккаунты</a>
+						</li>
+						<li class="game-card__list-title">
+							<a href="#">Алмазы</a>
+						</li>
+						<li class="game-card__list-title">
+							<a href="#">Донат</a>
+						</li>
+						<li class="game-card__list-title">
+							<a href="#">Услуги</a>
+						</li>
+						<li class="game-card__list-title">
+							<a href="#">Прочее</a>
+						</li>
+					</ul>
+					<ul class="game-card__list-buttons">
+						<li class="game-card__item">
+							<button class="btn active game-card__item-btn" type="button" aria-label="@@label">
+								RU
+							</button>
+						</li>
+						<li class="game-card__item">
+							<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+								EU
+							</button>
+						</li>
+						<li class="game-card__item">
+							<button class="btn  game-card__item-btn" type="button" aria-label="@@label">
+								US
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="cookie-preferences container" role="dialog" id="cookie-preferences" style="display: none" aria-labelledby="cookie-preferences-title">
+			<div class="cookie-preferences__title-wrap">
+				<h2 class="cookie-preferences__title" id="cookie-preferences-title">
+					Cookie Preferences
+				</h2>
+				<button class="cookie-preferences__btn" type="button" aria-label="close" tabindex="0">
+					<svg class="icon icon--close">
+						<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+					</svg>
+				</button>
+			</div>
+			<p class="cookie-preferences__text">
+				Each website you visit may store or&#160;retrieve data in&#160;your browser. This data and storage of&#160;said data are often necessary and important for the basic
+				functionality of&#160;the website and connected services. The storage of&#160;such data (often called cookies) may be&#160;used for marketing, analytics, and
+				to&#160;provide a&#160;personalised experience, for example, to&#160;store your preferences. We&#160;value your privacy, so&#160;you have the following options
+				to&#160;choose from regarding your data. You can disable certain types of&#160;storage if&#160;they are not necessary for the basic functioning of&#160;the website.
+			</p>
+			<p class="cookie-preferences__text">
+				If&#160;you need more information about each category of&#160;cookies we&#160;store and why we&#160;store them&#160;&#8212; please consult our
+				<a href="#" aria-label="Cookie Policy">Cookie Policy </a> and <a href="#" aria-label="Privacy Policy">Privacy Policy</a>. For data requests (including your personal
+				data)&#160;&#8212; please see our<a href="#" aria-label="Data Subject Access Requests (DSARs) Guidance"> Data Subject Access Requests (DSARs) Guidance</a>.
+			</p>
+			<div class="essential">
+				<label class="essential__checkbox-label">
+					<input type="checkbox" class="checkbox" />
+					<span class="checkbox-view">
+						<svg class="icon--check" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M14.6888 3.76577C14.7553 3.82397 14.8095 3.89482 14.8484 3.97418C14.8873 4.05354 14.9099 4.13984 14.9152 4.22805C14.9204 4.31626 14.908 4.40463 14.8787 4.48801C14.8495 4.5714 14.804 4.64814 14.7448 4.71377L7.73546 12.4931C7.67601 12.559 7.604 12.6123 7.52366 12.65C7.44332 12.6877 7.35626 12.709 7.26759 12.7126C7.17892 12.7162 7.09043 12.702 7.0073 12.671C6.92416 12.6399 6.84806 12.5926 6.78346 12.5318L2.72746 8.71377C2.60578 8.59758 2.53211 8.43998 2.521 8.27211C2.50989 8.10424 2.56215 7.9383 2.66746 7.8071C2.72431 7.73597 2.79501 7.67713 2.87529 7.63416C2.95557 7.59119 3.04374 7.56498 3.13445 7.55712C3.22517 7.54927 3.31653 7.55993 3.403 7.58846C3.48947 7.61699 3.56924 7.6628 3.63746 7.7231L6.78413 10.5538C6.91552 10.672 7.08849 10.7333 7.26501 10.724C7.44153 10.7148 7.60716 10.6358 7.72546 10.5044L13.7541 3.81977C13.8715 3.68966 14.0353 3.61098 14.2103 3.60075C14.3852 3.59052 14.5571 3.64956 14.6888 3.7651V3.76577Z"
+								fill="#151515"
+							/>
+						</svg>
+					</span>
+					Essential
+				</label>
+				<p class="essential__text">
+					These cookies are essential for the proper functioning of&#160;the website. Their deactivation compromises the use of&#160;the services accessible from login.
+				</p>
+			</div>
+			<div class="cookie-preferences__examples">
+				<span role="button" aria-label="Open examples" id="toggle-button" aria-expanded="false">
+					Examples (click to&#160;expand)
+				</span>
+				<div class="cookie-preferences__examples-block" id="examples-block">
+					<p>
+						&#171;PHPSESSID&#187;&#160;&#8212; when you visit Our site for the first time and until you register with Us, this is&#160;the only cookie used on&#160;our
+						website to&#160;store your choices. Without this cookie, the registration process will not be&#160;possible, and some essential website elements will not work
+						(e.g. CAPTCHA tests). This cookie is&#160;deleted when your browsing session ends.
+					</p>
+					<p>
+						&#171;golden_key&#187;&#160;&#8212; stores your choices during registration and helps us&#160;remember your choices. Without this cookie, you cannot sign
+						in&#160;or&#160;sign up&#160;for our services. The storage period is&#160;100 days.
+					</p>
+					<p>
+						&#171;locale&#187; and &#171;cy&#187;&#160;&#8212; are used to&#160;store your choices regarding preferred language and currency. The storage period
+						is&#160;365 days.
+					</p>
+					<p>
+						&#171;cookie_prefs&#187;&#160;&#8212; stores your choices when using the Cookie Preferences tool. The storage period is&#160;365 days.
+					</p>
+				</div>
+			</div>
+			<div class="analytical">
+				<label class="analytical__checkbox-label">
+					<input type="checkbox" class="checkbox" />
+					<span class="checkbox-view">
+						<svg class="icon--check" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M14.6888 3.76577C14.7553 3.82397 14.8095 3.89482 14.8484 3.97418C14.8873 4.05354 14.9099 4.13984 14.9152 4.22805C14.9204 4.31626 14.908 4.40463 14.8787 4.48801C14.8495 4.5714 14.804 4.64814 14.7448 4.71377L7.73546 12.4931C7.67601 12.559 7.604 12.6123 7.52366 12.65C7.44332 12.6877 7.35626 12.709 7.26759 12.7126C7.17892 12.7162 7.09043 12.702 7.0073 12.671C6.92416 12.6399 6.84806 12.5926 6.78346 12.5318L2.72746 8.71377C2.60578 8.59758 2.53211 8.43998 2.521 8.27211C2.50989 8.10424 2.56215 7.9383 2.66746 7.8071C2.72431 7.73597 2.79501 7.67713 2.87529 7.63416C2.95557 7.59119 3.04374 7.56498 3.13445 7.55712C3.22517 7.54927 3.31653 7.55993 3.403 7.58846C3.48947 7.61699 3.56924 7.6628 3.63746 7.7231L6.78413 10.5538C6.91552 10.672 7.08849 10.7333 7.26501 10.724C7.44153 10.7148 7.60716 10.6358 7.72546 10.5044L13.7541 3.81977C13.8715 3.68966 14.0353 3.61098 14.2103 3.60075C14.3852 3.59052 14.5571 3.64956 14.6888 3.7651V3.76577Z"
+								fill="#151515"
+							/>
+						</svg>
+					</span>
+					Analytical and third-party cookies
+				</label>
+				<p class="analytical__text">
+					These cookies help Us&#160;understand how Our website performs, responds, and generally functions when visitors interact with the site and whether there may
+					be&#160;any technical issues. We&#160;also use third-party tools to&#160;measure the performance of&#160;our website and the quality of&#160;our services. These
+					services may use cookies to&#160;process your data for other purposes, including marketing and personalisation. Currently, the site uses only Google Analytics and
+					Yandex Metrica.
+				</p>
+			</div>
+			<div class="cookie-preferences__btns">
+				<button class="btn active cookie-preferences__btn-save" type="submit" aria-label="Save settings button">
+					Save settings
+				</button>
+
+				<button class="btn  cookie-preferences__btn-agree" type="submit" aria-label="Agree to all button">
+					Agree to&#160;all
+				</button>
+			</div>
+		</div>
+		<div class="alert" role="alert" id="alert-modal" aria-live="assertive">
+			<div class="alert__wrap">
+				<span class="alert__title"> Внимание! </span>
+				<p class="alert__text">
+					16&#160;января с&#160;02:00 до&#160;02:30 мск на&#160;сайте будут проводиться работы по&#160;обновлению профилей. Данные баланса в&#160;этот период будут
+					недоступны.
+				</p>
+				<button type="button" class="alert__btn-close" aria-label="Закрыть уведомление">
+					<svg class="icon icon--close" aria-hidden="true">
+						<use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+
+		<div class="accept-cookies-modal" id="accept-cookies-modal" role="dialog" aria-live="assertive" aria-labelledby="accept-cookies-modal-message">
+			<p id="accept-cookies-modal-message" class="accept-cookies-modal__message">
+				Мы&#160;используем файлы куки, без них сайт будет плохо работать и&#160;вам будет неудобно им&#160;пользоваться.
+			</p>
+			<div class="accept-cookies-modal__btns">
+				<button class="accept-cookies-modal__btn active" id="accept-all" type="button" aria-label="Принять все файлы куки">Принять все</button>
+				<button class="accept-cookies-modal__btn" type="button" aria-label="Настроить файлы куки">Настроить</button>
+			</div>
+		</div>
+	</body>
+</html>
