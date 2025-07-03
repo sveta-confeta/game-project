@@ -1,0 +1,136 @@
+<header class="header container" role="banner">
+    <div class="header__wrap">
+        <div class="header__wrap-logo">
+            <a href="/" role="link" aria-label="Homepage">
+               <img alt="logo" src="../img/logo.jpg" width="113"
+               height="60">
+            </a>
+        </div>
+        <div class="header__search">
+            <label for="search-input" id="search-label" class="visually-hidden">Поиск</label>
+            <span class="header__search-icon">
+                <svg class="icon icon--search" aria-hidden="true">
+                    <use href="./img/svgsprite/sprite.symbol.svg#search"></use>
+                </svg>
+            </span>
+            <input type="text" placeholder="Поиск по 469 играм" class="header__search-input" id="search-input"
+                   name="search">
+            <button class="header__search-close-btn" type="button" aria-label="clear input" style="display: none">
+                <svg class="icon icon--close" aria-hidden="true">
+                    <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+                </svg>
+            </button>
+        </div>
+        <nav class="header__menu" role="navigation" aria-label="Main menu">
+            <ul class="header__menu-list">
+                <li class="header__menu-item" id="help" style="position: relative">
+                    <button class="header__menu-item-link" aria-label="Open help modal">
+                        <span>Помощь</span>
+                        <svg class="icon icon--arrow-small" aria-hidden="true">>
+                            <use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+                        </svg>
+                    </button>
+                    @@include('help-modal.html',{} )
+                </li>
+                <!--зарегистр пользователь-->
+                                <li class="header__menu-item header__registered">
+                                    <a href="#" class="header__menu-item-link" aria-label="Purchases">
+                                        <span>Покупки</span>
+                                        <span class="header__menu-item-link-count
+                                         header__menu-item-link-count--gray">8</span>
+                                    </a>
+                                </li>
+                                <li class="header__menu-item header__registered">
+                                    <a href="#" class="header__menu-item-link" aria-label="Sales">
+                                        <span>Продажи</span>
+                                        <span class="header__menu-item-link-count
+                                         header__menu-item-link-count--blue">24</span>
+                                    </a>
+                                </li>
+                                <li class="header__menu-item header__registered">
+                                    <a href="#" class="header__menu-item-link" aria-label="Messages">
+                                        <svg class="icon icon--message" aria-hidden="true">
+                                            <use href="./img/svgsprite/sprite.symbol.svg#message"></use>
+                                        </svg>
+                                        <span>Сообщения</span>
+                                        <span class="header__menu-item-link-count
+                                           header__menu-item-link-count--gray">24</span>
+                                    </a>
+                                </li>
+                <!--незарегистрир  пользователь-->
+                <li class="header__menu-item header__unregistered is-hidden">
+                    <a href="#" class="header__menu-item-link" aria-label="Purchases">
+                        <span>Гарантии</span>
+                    </a>
+                </li>
+                <li class="header__menu-item header__unregistered is-hidden">
+                    <a href="#" class="header__menu-item-link" aria-label="Sales">
+                        <span>For&nbsp;Resellers</span>
+                    </a>
+                </li>
+                <!--end //незарегистрир  пользователь-->
+            </ul>
+        </nav>
+        <!--зарегистр пользователь-->
+                <button type="button" class="header__message header__registered" aria-label="message">
+                    <svg class="icon icon--message" aria-hidden="true">
+                        <use href="./img/svgsprite/sprite.symbol.svg#message"></use>
+                    </svg>
+                </button>
+        <!--end///зарегистр пользователь-->
+        <!--незарегистр пользователь-->
+        <div class="header__unregistered-btns header__unregistered is-hidden">
+            <button type="button" class="user-btn" aria-label="user">
+                <svg class="icon icon--user-btn">
+                    <use href="./img/svgsprite/sprite.symbol.svg#user-btn"></use>
+                </svg>
+            </button>
+            <button type="button" class="burger-btn" aria-label="user">
+                <svg class="icon icon--burger">
+                    <use href="./img/svgsprite/sprite.symbol.svg#burger"></use>
+                </svg>
+            </button>
+        </div>
+
+        <div class="header__unregistered-block header__unregistered is-hidden">
+            @@include('favorites.html',{
+            "text": "",
+            "class":"" })
+            <button class="currency-btn" type="button" aria-label="open currency modal">
+                <span>RU / ₽</span>
+                <svg class="icon icon--arrow-small" aria-hidden="true">>
+                    <use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+                </svg>
+            </button>
+            @@include('currency-modal.html',{})
+            <button type="button" class="auth-btn" id="auth-btn">
+                <svg class="icon icon--user-btn">
+                    <use href="./img/svgsprite/sprite.symbol.svg#user-btn"></use>
+                </svg>
+                <span>Войти</span>
+            </button>
+        </div>
+        <!--end ///незарегистр пользователь-->
+        <!--зарегистр пользователь-->
+                <div class="header__currency header__registered" aria-label="Current balance">
+                    <svg class="icon icon--many" aria-hidden="true">
+                        <use href="./img/svgsprite/sprite.symbol.svg#many"></use>
+                    </svg>
+                    <span class="header__currency-text"> 978 879 ₽</span>
+                </div>
+                <div class="header__auth header__registered">
+                    <div class="header__auth-avatar">
+                        <span class="header__auth-avatar-count">0</span>
+                        <img src="./img/avatar.png" alt="user-avatar" class="header__auth-avatar-icon">
+                    </div>
+                    <button class="header__auth-arrow-btn" aria-label="profile modal">
+                        <svg class="icon icon--arrow-small" aria-hidden="true">
+                            <use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+                        </svg>
+                    </button>
+                    @@include('profile-modal.html',{})
+                </div>
+        <!--end ///зарегистр пользователь-->
+    </div>
+</header>
+@@include('mobile-menu.html',{} )

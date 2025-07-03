@@ -1,0 +1,56 @@
+.alert {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 8;
+  bottom: 16px;
+  width: calc(100% - 32px);
+  background: var(--text-info);
+  border-radius: 15px;
+  padding: 20px;
+  @media (min-width: 375px) {
+    left: unset;
+    right: 16px;
+    width: 100%;
+    transform: none;
+    max-width: 343px;
+  }
+  @include largeDesktop {
+    right: 64px;
+    bottom: 38px;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  &__btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    .icon--close {
+      min-width: 15px;
+      width: 15px;
+      height: 15px;
+      fill: var(--light-grey);
+      stroke: var(--light-grey);
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 8px;
+    color: var(--second-bg);
+  }
+  &__text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.14px;
+    color: var(--second-bg);
+  }
+}

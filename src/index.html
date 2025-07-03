@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+@@include('head.html', {
+"title" : "Cybercore"
+})
+<body class="light">
+@@include('header.html',{} )
+<main class="main-page">
+    @@include('often-searched-modal.html',{})
+    @@include('my-games.html',{})
+    @@include('favorites-message-modal-header.html', {})
+    @@include('favorites-modal.html', {})
+    <div class="content">
+        @@include('stories.html',{})
+        @@include('trend.html',{})
+        @@include('games.html',{})
+    </div>
+</main>
+@@include('footer.html',{} )
+@@include('auth-modal.html',{})
+@@include('first-favorites-menu-modal.html', {})
+@@include('favorites-menu-modal.html', {})
+@@include('cookie-preferences.html', {})
+@@include('alert-modal.html',{})
+@@include('accept-cookies-modal.html', {})
+</body>
+</html>

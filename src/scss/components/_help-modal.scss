@@ -1,0 +1,86 @@
+.help-modal {
+  position: absolute;
+  bottom: -435px;
+  right: -168px;
+  background: var(--second-bg);
+  border-radius: 20px;
+  width: 300px;
+  opacity: 1;
+  padding: 16px;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 40px 0 rgba(35, 42, 72, 0.06);
+  #help-modal-favorites {
+    cursor: pointer;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+      padding: 16px 0;
+      cursor: pointer;
+      display: flex;
+      border-bottom: 2px solid var(--line);
+
+      &-count {
+        color: var(--light-grey);
+        @include flex-center;
+        background: var(--main-bg);
+        min-width: 24px;
+        min-height: 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: -0.55px;
+        margin-left: auto;
+      }
+
+      &-wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -1%;
+        color: var(--dark-gray);
+
+        .icon--guarantee,
+        .icon--label,
+        .icon--info,
+        .icon--rule,
+        .icon--question {
+          width: 16px;
+          height: 16px;
+          fill: var(--gray);
+        }
+
+        .icon--empty-heart {
+          width: 16px;
+          height: 16px;
+          stroke: var(--gray);
+        }
+
+        .icon--arrow-small-xs {
+          width: 16px;
+          height: 16px;
+          fill: var(--gray);
+        }
+      }
+    }
+
+    &-item:first-child {
+      padding-top: 0;
+    }
+
+    &-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}

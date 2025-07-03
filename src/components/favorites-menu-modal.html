@@ -1,0 +1,33 @@
+<div class="favorites-menu visually-hidden">
+    <div class="favorites-menu__top">
+        <button class="favorites-menu__top-btn" type="button" aria-label="вернуться назад">
+            <svg class="icon icon--arrow-small">
+                <use href="./img/svgsprite/sprite.symbol.svg#arrow-small"></use>
+            </svg>
+        </button>
+        <span class="favorites-menu__top-title">Избранное</span>
+    </div>
+    <div class="favorites-menu__list-cards">
+        @@include('game-status-card.html',{
+        "img": "./img/often-searched/img1.jpg",
+        "title": "Aion Classic" ,
+        "status": "ХИТ",
+        "class": "status-card--hit"})
+        @@include('game-status-card.html',{
+        "img": "./img/often-searched/img2.jpg",
+        "title": "Assassin’s Creed",
+        "status": "ТОП",
+        "class": "status-card--top"} )
+        @@include('game-card.html',{
+        "img": "./img/often-searched/img1.jpg",
+        "title": "Aion Classic" ,
+        "status": "",
+        "class": ""})
+        @@include('game-card.html',{
+        "img": "./img/often-searched/img2.jpg",
+        "title": "Assassin’s Creed",
+        "status": "",
+        "class": ""} )
+    </div>
+
+</div>

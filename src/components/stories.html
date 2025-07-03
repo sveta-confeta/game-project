@@ -1,0 +1,237 @@
+<section class="stories">
+    <div class="stories__el-left"></div>
+    <h2 class="visually-hidden">stories</h2>
+    <div class="swiper" id="swiperCard" aria-label="Story Slider">
+        @@include('button-arrow.html', {
+        "class": "swiper-button-prev-stories swiper-button-prev",
+        "aria-label": "Previous slide"
+        })
+        @@include('button-arrow.html', {
+        "class": "swiper-button-next-stories swiper-button-next",
+        "aria-label": "Next slide"
+        })
+        <div class="fog-left"></div>
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                <img src="./img/stories/stories1.jpg" alt="roblox"/>
+                <span class="swiper-slide__title">Roblox</span>
+            </li>
+            <li class="swiper-slide">
+                <img src="./img/stories/stories2.jpg" alt="roblox"/>
+                <span class="swiper-slide__title">ТОП мобильных игр</span>
+            </li>
+            <li class="swiper-slide">
+                <img src="./img/stories/stories3.jpg" alt="roblox"/>
+                <span class="swiper-slide__title">Покупайте безопасно</span>
+            </li>
+            <li class="swiper-slide">
+                <img src="./img/stories/stories4.jpg" alt="roblox"/>
+                <span class="swiper-slide__title">Продавайте с нами</span>
+            </li>
+            <li class="swiper-slide">
+                <img src="./img/stories/stories5.jpg" alt="roblox"/>
+                <span class="swiper-slide__title">ТОП мобильных игр</span>
+            </li>
+            <li class="swiper-slide">
+                <img src="./img/stories/stories4.jpg" alt=""/>
+                <span class="swiper-slide__title">Продавайте c нами</span>
+            </li>
+            <li class="swiper-slide">
+                <img src="./img/stories/stories5.jpg" alt=""/>
+                <span class="swiper-slide__title">ТОП мобильных игр</span>
+            </li>
+            <li class="swiper-slide">
+                <img src="./img/stories/stories4.jpg" alt=""/>
+                <span class="swiper-slide__title">Продавайте с нами</span>
+            </li>
+            <li class="swiper-slide">
+                <img src="./img/stories/stories4.jpg" alt=""/>
+                <span class="swiper-slide__title">Продавайте с нами</span>
+            </li>
+        </ul>
+        <div class="fog-right"></div>
+    </div>
+
+    <div class="storiesCards" id="storiesWrapper">
+        <div class="storiesCards__content" id="stories">
+            <ul class="swiper-wrapper">
+                <li
+                        class="swiper-slide"
+                        data-title='["Текст один", "Текст два", "Текст три"]'
+                        data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+                        data-button='["Текст один", "Текст два", "Текст три"]'
+                        data-images='["./img/storeez-slider1.jpg", "./img/storeez-slider1.jpg", "./img/storeez-slider1.jpg" ]'
+                >
+                    <button type="button" aria-label="close slider" class="close-button">
+                        <svg class="icon icon--close" aria-hidden="true">
+                            <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+                        </svg>
+                    </button>
+                    <img src="" alt="" class="blurred-image"/>
+                    <div class="swiper-slide__wrap">
+                        <div class="swiper-slide-active__item">
+                            <div class="prev"></div>
+                            <div class="next"></div>
+                        </div>
+                        <div class="storiesCards__content__bottom">
+                            <span class="storiesCards__content__bottom-title"> </span>
+                            <span class="storiesCards__content__bottom-text"> </span>
+                            <div class="storiesCards__content__bottom-btn">
+                                <button class="storiesCards__btn" type="button"></button>
+                                <div class="favorites" role="button" aria-label="check like">
+                                    @@include('favorites.html',{
+                                    "text": "",
+                                    "class":"" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progressWrapper"></div>
+                    </div>
+                </li>
+                <li
+                        class="swiper-slide"
+                        data-title='["Текст один", "Текст два", "Текст три"]'
+                        data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+                        data-button='["Текст один", "Текст два", "Текст три"]'
+                        data-images='["./img/storeez-slider2.jpg", "./img/storeez-slider2.jpg", "./img/storeez-slider2.jpg" ]'
+                >
+                    <button type="button" aria-label="close slider" class="close-button">
+                        <svg class="icon icon--close" aria-hidden="true">
+                            <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+                        </svg>
+                    </button>
+                    <img src="" alt="" class="blurred-image"/>
+                    <div class="swiper-slide__wrap">
+                        <div class="swiper-slide-active__item">
+                            <div class="prev"></div>
+                            <div class="next"></div>
+                        </div>
+                        <div class="storiesCards__content__bottom">
+                            <span class="storiesCards__content__bottom-title"> </span>
+                            <span class="storiesCards__content__bottom-text"> </span>
+                            <div class="storiesCards__content__bottom-btn">
+                                <button class="storiesCards__btn" type="button"></button>
+                                <div class="favorites" role="button" aria-label="check like">
+                                    @@include('favorites.html',{
+                                    "text": "",
+                                    "class":"" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progressWrapper"></div>
+                    </div>
+                </li>
+                <li
+                        class="swiper-slide"
+                        data-title='["Текст один", "Текст два", "Текст три"]'
+                        data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+                        data-button='["Текст один", "Текст два", "Текст три"]'
+                        data-images='["./img/storeez-slider3.jpg", "./img/storeez-slider3.jpg", "./img/storeez-slider3.jpg" ]'
+                >
+                    <button type="button" aria-label="close slider" class="close-button">
+                        <svg class="icon icon--close" aria-hidden="true">
+                            <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+                        </svg>
+                    </button>
+                    <img src="" alt="" class="blurred-image"/>
+                    <div class="swiper-slide__wrap">
+                        <div class="swiper-slide-active__item">
+                            <div class="prev"></div>
+                            <div class="next"></div>
+                        </div>
+                        <div class="storiesCards__content__bottom">
+                            <span class="storiesCards__content__bottom-title"> </span>
+                            <span class="storiesCards__content__bottom-text"> </span>
+                            <div class="storiesCards__content__bottom-btn">
+                                <button class="storiesCards__btn" type="button"></button>
+                                <div class="favorites" role="button" aria-label="check like">
+                                    @@include('favorites.html',{
+                                    "text": "",
+                                    "class":"" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progressWrapper"></div>
+                    </div>
+                </li>
+                <li
+                        class="swiper-slide"
+                        data-title='["Текст один", "Текст два", "Текст три"]'
+                        data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+                        data-button='["Текст один", "Текст два", "Текст три"]'
+                        data-images='["./img/storeez-slider4.jpg", "./img/storeez-slider4.jpg", "./img/storeez-slider4.jpg" ]'
+                >
+                    <button type="button" aria-label="close slider" class="close-button">
+                        <svg class="icon icon--close" aria-hidden="true">
+                            <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+                        </svg>
+                    </button>
+                    <img src="" alt="" class="blurred-image"/>
+                    <div class="swiper-slide__wrap">
+                        <div class="swiper-slide-active__item">
+                            <div class="prev"></div>
+                            <div class="next"></div>
+                        </div>
+                        <div class="storiesCards__content__bottom">
+                            <span class="storiesCards__content__bottom-title"> </span>
+                            <span class="storiesCards__content__bottom-text"> </span>
+                            <div class="storiesCards__content__bottom-btn">
+                                <button class="storiesCards__btn" type="button"></button>
+                                <div class="favorites" role="button" aria-label="check like">
+                                    @@include('favorites.html',{
+                                    "text": "",
+                                    "class":"" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progressWrapper"></div>
+                    </div>
+                </li>
+                <li
+                        class="swiper-slide"
+                        data-title='["Текст один", "Текст два", "Текст три"]'
+                        data-text='["Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать",
+                        "Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показать. Рыбный текст, чтобы показатьРыбный текст, чтобы показать"]'
+                        data-button='["Текст один", "Текст два", "Текст три"]'
+                        data-images='["./img/storeez-slider5.jpg", "./img/storeez-slider5.jpg", "./img/storeez-slider5.jpg" ]'
+                >
+                    <button type="button" aria-label="close slider" class="close-button">
+                        <svg class="icon icon--close" aria-hidden="true">
+                            <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+                        </svg>
+                    </button>
+                    <img src="" alt="" class="blurred-image"/>
+                    <div class="swiper-slide__wrap">
+                        <div class="swiper-slide-active__item">
+                            <div class="prev"></div>
+                            <div class="next"></div>
+                        </div>
+                        <div class="storiesCards__content__bottom">
+                            <span class="storiesCards__content__bottom-title"> </span>
+                            <span class="storiesCards__content__bottom-text"> </span>
+                            <div class="storiesCards__content__bottom-btn">
+                                <button class="storiesCards__btn" type="button"></button>
+                                <div class="favorites" role="button" aria-label="check like">
+                                    @@include('favorites.html',{
+                                    "text": "",
+                                    "class":"" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progressWrapper"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="stories__el-right"></div>
+</section>

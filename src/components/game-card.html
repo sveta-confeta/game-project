@@ -1,0 +1,44 @@
+<div class=" card game-card">
+    <a href="#" class="title game-card__title">@@title</a>
+    <ul class="game-card__list-titles">
+        <li class="game-card__list-title">
+            <a href="#"> Аккаунты</a></li>
+        <li class="game-card__list-title">
+            <a href="#">Алмазы</a></li>
+        <li class="game-card__list-title">
+            <a href="#">Донат</a></li>
+        <li class="game-card__list-title">
+            <a href="#">Услуги</a></li>
+        <li class="game-card__list-title">
+            <a href="#">Прочее</a></li>
+    </ul>
+    <ul class="game-card__list-buttons">
+        <li class="game-card__item">
+            @@include('button.html', {
+            "type": "button",
+            "name":"RU",
+            "action": "change",
+            "active": "active",
+            "class": "game-card__item-btn"
+            })
+        </li>
+        <li class="game-card__item">
+            @@include('button.html', {
+            "type": "button",
+            "name":"EU",
+            "action": "change",
+            "active": "",
+            "class": "game-card__item-btn"
+            })
+        </li>
+        <li class="game-card__item">
+            @@include('button.html', {
+            "type": "button",
+            "name":"US",
+            "action": "change",
+            "active": "",
+            "class": "game-card__item-btn"
+            })
+        </li>
+    </ul>
+</div>

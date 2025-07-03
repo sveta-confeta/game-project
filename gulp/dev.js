@@ -1,0 +1,170 @@
+const gulp = require('gulp');
+const fileInclude = require('gulp-file-include');
+const sass = require('gulp-sass')(require('sass'));
+const sassGlob = require('gulp-sass-glob');
+const server = require('gulp-server-livereload');
+const clean = require('gulp-clean');
+const fs = require('fs');
+const sourceMaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
+const webpack = require('webpack-stream');
+const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
+const typograf = require('gulp-typograf');
+const svgsprite = require('gulp-svg-sprite');
+const webpHTML = require('gulp-webp-retina-html');
+const imageminWebp = require('imagemin-webp');
+const rename = require('gulp-rename');
+const prettier = require('@bdchauvette/gulp-prettier');
+const watch = require('gulp-watch');
+const ignore = require('gulp-ignore');
+const autoprefixer = require('gulp-autoprefixer');
+
+gulp.task('clean:dev', function (done) {
+	if (fs.existsSync('./build/')) {
+		return gulp.src('./build/', { read: false }).pipe(clean({ force: true }));
+	}
+	done();
+});
+
+const fileIncludeSetting = {
+	prefix: '@@',
+	basepath: 'src/components'
+};
+
+gulp.task('html:dev', function () {
+	return gulp
+		.src(['src/*.html', 'src/pages/*.html'])
+		.pipe(changed('./build/', { hasChanged: changed.compareContents }))
+		.pipe(plumber())
+		.pipe(fileInclude(fileIncludeSetting))
+		.pipe(typograf({
+			locale: ['ru', 'en-US'],
+			htmlEntity: { type: 'digit' },
+			safeTags: [
+				['<\\?php', '\\?>'],
+				['<no-typography>', '</no-typography>'],
+			],
+		}))
+		.pipe(webpHTML({
+			extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
+			retina: {
+				1: '',
+				2: '@2x',
+			},
+		}))
+		.pipe(prettier({
+			tabWidth: 4,
+			useTabs: true,
+			printWidth: 182,
+			trailingComma: 'es5',
+			bracketSpacing: false,
+		}))
+		.pipe(gulp.dest('./build/'));
+});
+
+gulp.task('sass:dev', function () {
+	return gulp
+		.src('./src/scss/*.scss')
+		.pipe(changed('./build/css/'))
+		.pipe(plumber())
+		.pipe(sourceMaps.init())
+		.pipe(sassGlob())
+		.pipe(sass())
+		.pipe(autoprefixer({
+			overrideBrowserslist: ['last 2 versions'],
+			cascade: false
+		}))
+		.pipe(sourceMaps.write())
+		.pipe(gulp.dest('./build/css/'));
+});
+
+gulp.task('images:dev', function () {
+	return gulp
+		.src(['./src/img/**/*', '!./src/img/svgicons/**/*'])
+		.pipe(ignore.exclude('*.crdownload'))
+		.pipe(changed('./build/img/'))
+		.pipe(imagemin([imageminWebp({ quality: 85 })]))
+		.pipe(rename({ extname: '.webp' }))
+		.pipe(gulp.dest('./build/img/'))
+		.pipe(gulp.src(['./src/img/**/*', '!./src/img/svgicons/**/*']))
+		.pipe(changed('./build/img/'))
+		.pipe(ignore.exclude('*.crdownload'))
+		.pipe(gulp.dest('./build/img/'));
+});
+
+const svgSymbol = {
+	mode: {
+		symbol: {
+			sprite: '../sprite.symbol.svg',
+		},
+	},
+	shape: {
+		transform: [
+			{
+				svgo: {
+					js2svg: { indent: 4, pretty: true },
+					plugins: [
+						{
+							name: 'removeAttrs',
+							params: {
+								attrs: '(fill|stroke)',
+							},
+						},
+					],
+				},
+			},
+		],
+	},
+};
+
+gulp.task('svgSymbol:dev', function () {
+	return gulp
+		.src('./src/img/svgicons/**/*.svg')
+		.pipe(plumber())
+		.pipe(svgsprite(svgSymbol))
+		.pipe(gulp.dest('./build/img/svgsprite/'));
+});
+
+gulp.task('copyFonts:dev', function () {
+	return gulp
+		.src(['./src/fonts/**/*.woff', './src/fonts/**/*.woff2'])
+		.pipe(gulp.dest('./build/fonts'));
+});
+
+gulp.task('files:dev', function () {
+	return gulp
+		.src('./src/files/**/*')
+		.pipe(changed('./build/files/'))
+		.pipe(gulp.dest('./build/files/'));
+});
+
+gulp.task('js:dev', function () {
+	return gulp
+		.src('./src/js/**/*.js')
+		.pipe(changed('./build/js/'))
+		.pipe(plumber())
+		.pipe(webpack(require('./../webpack.config.js')))
+		.pipe(gulp.dest('./build/js/'));
+});
+
+const serverOptions = {
+	livereload: true,
+	open: true,
+};
+
+gulp.task('server:dev', function () {
+	return gulp.src('./build/').pipe(server(serverOptions));
+});
+
+
+gulp.task('watch:dev', function () {
+	watch(['./src/fonts/*.woff','./src/fonts/*.woff2'], gulp.parallel('copyFonts:dev'));
+	watch('./src/scss/**/*.scss', gulp.parallel('sass:dev'));
+	watch(['src/**/*.html'], gulp.parallel('html:dev'));
+	watch('./src/img/**/*', gulp.parallel('images:dev'));
+	watch('./src/files/**/*', gulp.parallel('files:dev'));
+	watch('./src/js/**/*.js', gulp.parallel('js:dev'));
+	watch('./src/img/svgicons/*', gulp.series( 'svgSymbol:dev'));
+});
+

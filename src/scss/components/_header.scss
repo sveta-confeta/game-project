@@ -1,0 +1,656 @@
+.header {
+  background: var(--main-bg);
+  @include flex-between;
+  max-width: 1408px;
+  min-height: 64px;
+  background: transparent;
+  border-radius: 16px;
+  padding: 16px 16px 12px 16px;
+  z-index: 5;
+  position: fixed;
+  left: 0;
+  right: 0;
+  @include tablet {
+    margin: 0 auto;
+    width: calc(100% - 32px);
+    position: sticky;
+    top:16px;
+    background: var(--second-bg);
+    height: 64px;
+    padding: 0 16px 0 24px;
+  }
+  @include smallDesktop {
+    height: 72px;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    height: 99px;
+    @include tablet {
+      height: auto;
+      @include flex-between;
+    }
+
+  }
+
+  &__wrap-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    height: 32px;
+    @include tablet {
+      margin-bottom: 0;
+      margin-right: 24px;
+    }
+    @include desktop {
+      margin-right: 32px;
+    }
+
+    .logo {
+      min-width: 87px;
+      max-width: 87px;
+      height: 32px;
+      @include tablet {
+        min-width: 78px;
+        max-width: 78px;
+        height: 32px;
+        margin-top: 3px;
+      }
+      @include desktop {
+        min-width: 100px;
+        max-width: 100px;
+        height: 40px;
+      }
+    }
+  }
+
+  .icon--user {
+    stroke: var(--icon-main);
+    width: 20px;
+    height: 20px;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .logo {
+
+    &__text {
+      fill: var(--icon-main)
+    }
+
+    &__el {
+      fill: var(--main-blue);
+    }
+  }
+
+  .menu-icon-wrap {
+    display: block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+
+    .menu-icon {
+      position: relative;
+      width: 22px;
+      height: 3px;
+      background-color: var(--icon-main);
+      border-radius: 5px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: -9px;
+        content: '';
+        width: 22px;
+        height: 3px;
+        background-color: var(--icon-main);
+        border-radius: 5px;
+      }
+
+      &::after {
+        position: absolute;
+        left: 0;
+        top: 9px;
+        content: '';
+        width: 22px;
+        height: 3px;
+        background-color: var(--icon-main);
+        border-radius: 5px;
+      }
+
+      &.active {
+        background: transparent !important;
+      }
+
+      &.active::before {
+        background: var(--icon-main);
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      &.active::after {
+        background: var(--icon-main);
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+
+    .menu-mob {
+      display: none;
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 100px 20px 20px 20px;
+      background: var(--icon-main);
+      height: 100vh;
+
+      &.active {
+        display: block !important;
+      }
+
+      &__list {
+        margin-bottom: 28px;
+
+        &-item {
+          padding: 16px 0;
+
+          &:not(:last-child) {
+            //border-bottom: 1px solid $light-grey;
+          }
+
+          & a {
+            font-family: GraphikLCG, Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%;
+            //color: $dark-blue;
+
+            &.active {
+              //color: $active-color;
+            }
+          }
+        }
+      }
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+  }
+  .icon--search {
+    margin-top: 5px;
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    fill: var(--gray);
+    margin-left: -5px;
+    z-index: 1;
+    @include tablet {
+      width: 17px;
+      height: 17px;
+      min-width: 17px;
+      margin-top: 4px;
+    }
+    @include desktop {
+      width: 27px;
+      height: 27px;
+      min-width: 27px;
+      margin-top: 4px;
+    }
+
+  }
+
+  &__search {
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid var(--blue);
+    align-items: center;
+    min-height: 48px;
+    height: 48px;
+    flex-grow: 1;
+    width: 100%;
+    padding: 12px 18px 12px 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--second-bg);
+    @include tablet {
+      position: relative;
+      min-height: 40px;
+      height: auto;
+      margin-right: 59px;
+      padding: 0 12px;
+      width: 100%;
+    }
+    @include smallDesktop {
+      margin-right: 34px;
+      max-width: 486px;
+    }
+    @include desktop {
+      margin-right: 35px;
+      min-height: 48px;
+      height: 48px;
+      max-width: 486px;
+    }
+
+    &-input {
+      width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: var(--second-bg);
+      margin-right: auto;
+      padding-left: 5px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+        &::placeholder {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+          color: var(--light-grey);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @include desktop {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+          }
+        }
+    }
+    &-close-btn {
+      .icon--close {
+        width: 14px;
+        height: 14px;
+        fill: var(--text-input);
+        stroke: var(--text-input);
+      }
+    }
+
+  }
+
+  &__menu {
+    display: none;
+    @include smallDesktop {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+    }
+  }
+
+  &__menu-list {
+    @include flex-between;
+
+    @include smallDesktop {
+      gap: 17px;
+    }
+    @include desktop {
+      gap: 24px;
+    }
+  }
+
+  &__menu-item {
+    cursor: pointer;
+
+    &-link {
+      font-weight: 400;
+      line-height: 20px;
+      color: var(--dark-gray);
+      @include flex-center;
+      font-style: normal;
+      gap: 4px;
+      cursor: pointer;
+      @include smallDesktop {
+        font-size: 14px;
+      }
+      @include desktop {
+        font-size: 16px;
+      }
+
+      .icon--arrow-small {
+        min-width: 17px;
+        max-width: 17px;
+        height: 16px;
+        stroke: var(--gray);
+      }
+
+      .icon--message {
+        min-width: 20px;
+        max-width: 20px;
+        height: 20px;
+        fill: var(--gray);
+      }
+
+      &-count {
+        @include tablet {
+          display: block;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 16px;
+          width: 24px;
+          height: 24px;
+          @include flex-center;
+          border-radius: 8px;
+        }
+
+      }
+
+      &-count--gray {
+        background: var(--line);
+        color: var(--gray);
+      }
+
+      &-count--blue {
+        background: var(--blue-gradient);
+        color: var(--white-text);
+      }
+    }
+  }
+
+  &__message {
+      display: none;
+    @include tablet {
+      margin-right: 24px;
+      display: block;
+      margin-top: 2px;
+    }
+    @include smallDesktop {
+      display: none;
+    }
+
+    .icon--message {
+      min-width: 20px;
+      max-width: 20px;
+      height: 20px;
+      fill: var(--gray);
+    }
+  }
+
+  &__unregistered-btns {
+    display: block;
+    @include flex-between;
+    height: 24px;
+    gap: 16px;
+    margin-top: 5px;
+    margin-left: 0;
+    @include tablet {
+      margin-left: 99px;
+      height: auto;
+      gap: 24px;
+    }
+    @include smallDesktop {
+      display: none;
+    }
+
+    .user-btn {
+      .icon--user-btn {
+        min-width: 18px;
+        max-width: 18px;
+        height: 18px;
+        fill: var(--gray);
+      }
+    }
+
+    .burger-btn {
+      .icon--burger {
+        min-width: 24px;
+        max-width: 24px;
+        height: 24px;
+        fill: var(--gray);
+      }
+    }
+  }
+
+
+  &__currency {
+    display: none;
+    @include smallDesktop {
+      margin-left: 24px;
+      min-width: 95px;
+      width: 95px;
+      display: flex;
+      border-radius: 8px;
+      position: relative;
+    }
+    @include desktop {
+      margin-left: 28px;
+      min-width: 104px;
+    }
+
+    &-text {
+      font-weight: 600;
+      letter-spacing: -0.16px;
+      color: var(--main-blue);
+      @include smallDesktop {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 2px;
+      }
+      @include desktop {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+      }
+    }
+
+    .icon--many {
+      min-width: 24px;
+      max-width: 24px;
+      height: 24px;
+      stroke: var(--main-blue);
+      margin-right: 6px;
+    }
+  }
+
+  &__unregistered-block {
+    display: none;
+    @include smallDesktop {
+      @include flex-between;
+      gap: 8px;
+      position: relative;
+      width: 287px;
+      min-width: 287px;
+      margin-left: 92px;
+    }
+
+    .auth-btn {
+      background-color: var(--main-blue);
+      padding: 14px;
+      border-radius: 8px;
+      @include flex-center;
+      @include desktop {
+        padding: 12px 20px;
+      }
+
+      .icon--user-btn {
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+        fill: var(--color-btn-white);
+        margin-right: 8px;
+      }
+
+      span {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -0.16px;
+        color: var(--color-btn-white);
+        margin-bottom: -2px;
+        display: block;
+        @include desktop {
+          font-weight: 500;
+          line-height: 20px;
+        }
+      }
+
+    }
+
+    .favorites__btn {
+      margin-right: 0;
+      background: var(--line);
+    }
+
+    .currency-btn {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      color: var(--dark-gray);
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--line);
+      gap: 8px;
+      max-width: 115px;
+      @include flex-between;
+
+      .icon--arrow-small {
+        min-width: 16px;
+        max-width: 16px;
+        height: 16px;
+        stroke: var(--gray);
+
+      }
+    }
+
+  }
+
+  &__auth {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    gap: 8px;
+    cursor: pointer;
+    height: 40px;
+    @include tablet {
+      margin-left: 0;
+      @include flex-center;
+    }
+
+    &-avatar {
+      position: relative;
+
+      &-count {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 13px;
+        width: 16px;
+        height: 16px;
+        @include flex-center;
+        position: absolute;
+        top: 0;
+        right: -3px;
+        border-radius: 4px;
+        background: var(--blue-gradient);
+        color: var(--white-text);
+        @include smallDesktop {
+          display: none;
+        }
+
+      }
+
+      &-icon {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @include tablet {
+          margin-left: 0;
+        }
+        @include smallDesktop {
+          margin-left: 16px;
+        }
+        @include desktop {
+          width: 48px;
+          min-width: 48px;
+          height: 48px;
+        }
+      }
+
+    }
+
+    .icon--arrow-small {
+      min-width: 16px;
+      max-width: 16px;
+      height: 16px;
+      stroke: var(--gray);
+
+    }
+    &-arrow-btn {
+      height: 38px;
+      @include tablet {
+        height: auto;
+      }
+    }
+
+  }
+}
+.header--fixed {
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 4px 40px 0 rgba(35, 42, 72, 0.06);
+    background: var(--second-bg);
+    min-height: 64px;
+    padding: 12px 16px;
+  }
+  .header__wrap {
+    @media (max-width: 767px) {
+      @include flex-between;
+      height: auto;
+    }
+
+  }
+  .header__message {
+    display: block;
+    margin-right: 16px;
+    margin-top: 2px;
+  }
+  .header__wrap-logo {
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+      margin-top: 5px;
+      margin-right: 16px;
+    }
+  }
+  .header__search {
+    @media (max-width: 767px) {
+      margin-right: 16px;
+      position: static;
+      height: 40px;
+      min-height: 40px;
+    }
+  }
+
+  .logo {
+    @media (max-width: 767px) {
+      min-width: 65px;
+      max-width: 65px;
+      height: 24px;
+    }
+  }
+}
+
+
+

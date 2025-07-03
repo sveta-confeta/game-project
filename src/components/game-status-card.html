@@ -1,0 +1,41 @@
+<div class="card game-status-card">
+    <img class="game-status-card__img" src="@@img" alt="@@title">
+    <div class="game-status-card__wrap">
+        <a href="#" class="title game-status-card__title">@@title</a>
+        <div class="game-status-card__wrap-order">
+            <ul class="game-status-card__list-titles">
+                <li class="game-status-card__list-title">
+                    <a href="#">Аккаунты</a></li>
+                <li class="game-status-card__list-title"><a href="#"> Донат</a></li>
+                <li class="game-status-card__list-title"><a href="#">Услуги</a></li>
+                <li class="game-status-card__list-title"><a href="#">Прочее</a></li>
+            </ul>
+            <ul class="game-status-card__list-buttons">
+                <li class="game-status-card__item">
+                    @@include('button.html', { "type": "button", "name":"RU", "action": "change", "active": "active", "class": "game-status-card__item-btn" })
+                </li>
+                <li class="game-status-card__item">
+                    @@include('button.html', {
+                    "type": "button",
+                    "name":"EU",
+                    "action": "change",
+                    "active": "",
+                    "class": "game-status-card__item-btn"
+                    })
+                </li>
+                <li class="game-status-card__item">
+                    @@include('button.html', {
+                    "type": "button",
+                    "name":"Free",
+                    "action": "change",
+                    "active": "",
+                    "class": "game-status-card__item-btn"
+                    })
+                </li>
+            </ul>
+        </div>
+    </div>
+    <span class="status-card @@class game-status-card__status">
+        @@status
+    </span>
+</div>

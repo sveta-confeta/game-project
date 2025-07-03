@@ -1,0 +1,340 @@
+.auth-modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--height100vh);
+  left: 0;
+  z-index: 60;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include flex-center;
+  flex-direction: column;
+  background-color: var(--main-bg);
+  @include tablet {
+    background-color: var(--dark-bg);
+  }
+
+  #auth-modal {
+    display: none;
+  }
+  &__header {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 12px;
+    @include tablet {
+      display: none;
+    }
+    &-back {
+      position: absolute;
+      top: 20px;
+      left: 16px;
+      .icon--arrow-back {
+        width: 16px;
+        height: 16px;
+        stroke: var(--light-grey);
+      }
+    }
+  }
+  &__content {
+    padding: 16px;
+    background: var(--main-bg);
+    width: 100%;
+    max-width: initial;
+    height: calc(100% - 44px);
+    position: relative;
+    cursor: default;
+    row-gap: 0;
+    z-index: 7;
+    @include tablet {
+      border-radius: 20px;
+      background: var(--second-bg);
+      padding: 40px;
+      max-width: 394px;
+      height: min-content;
+    }
+  }
+
+  &__close-btn {
+    display: none;
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: -40px;
+      cursor: pointer;
+    }
+
+    .icon--close {
+      width: 25px;
+      height: 25px;
+      fill: var(--white-text);
+    }
+  }
+
+  &__tabs-list {
+    @include flex-between;
+    margin-top: 16px;
+    background: var(--second-bg);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 40px;
+    @include tablet {
+      margin-top: 0;
+      margin-bottom: 24px;
+      background: var(--main-light-blue);
+    }
+  }
+
+  &__tabs-item {
+    width: 50%;
+    height: 100%;
+
+    &-btn {
+      width: 100%;
+      height: 100%;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -0.16px;
+      padding: 12px 0;
+      color: var(--title-color);
+      @include flex-center;
+      transition: background 0.3s ease, color 0.3s ease;
+      @include tablet {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+      }
+
+      &.auth-modal__tabs-item-btn--active {
+        background: var(--main-blue);
+        color: var(--color-btn-white);
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__tabs-content {
+    display: none;
+  }
+
+  &__tabs-content--active {
+    display: block;
+  }
+
+  .login,
+  .registration,
+  .recovery {
+    padding: 16px;
+    background: var(--second-bg);
+    box-shadow: 0 4px 40px 0 rgba(35, 42, 72, 0.06);
+    border-radius: 15px;
+    @include tablet {
+      box-shadow: none;
+      padding: 0;
+    }
+
+    &__input-wrap:first-child {
+      margin-bottom: 25px;
+    }
+
+    &__link {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%;
+      color: var(--main-blue);
+      text-align: right;
+      display: block;
+      margin-bottom: 32px;
+      margin-top: 4px;
+      @include tablet {
+        margin-bottom: 24px;
+      }
+    }
+
+    &__capcha {
+      margin-bottom: 32px;
+      @include tablet {
+        margin-bottom: 12px;
+      }
+    }
+
+    &__btns-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__btn {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -0.14px;
+      padding: 15px 0;
+      width: 100%;
+      @include flex-center;
+      border-radius: 8px;
+
+      &.disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+        @include tablet {
+          font-size: 16px;
+          letter-spacing: -0.16px;
+        }
+      }
+    }
+
+    &__btn--blue {
+      background: var(--main-blue);
+      color: white;
+    }
+
+    &__btn--gray {
+      color: var(--title-color);
+      background: var(--main-light-blue);
+
+      .icon--vk {
+        fill: var(--icon-main);
+        width: 23px;
+        height: 13px;
+        margin-right: 10px;
+        margin-top: -1px;
+      }
+    }
+
+  }
+
+  .registration {
+    &__btn--gray {
+      margin-bottom: 32px;
+      @include tablet {
+        margin-bottom: 24px;
+      }
+    }
+
+    &__input-wrap {
+      margin-bottom: 12px;
+    }
+
+    &__btn--blue {
+      margin-bottom: 12px;
+    }
+
+    &__link {
+      padding: 12px 0;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      letter-spacing: -0.14px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0;
+      @include tablet {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: -0.16px;
+      }
+    }
+
+  }
+
+  .recovery {
+    &__title {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 110%;
+      letter-spacing: -0.4px;
+      margin-bottom: 20px;
+      color: var(--title-color);
+      text-align: center;
+      display: block;
+      @include tablet {
+        font-size: 28px;
+        letter-spacing: -0.84px;
+        margin-bottom: 24px;
+      }
+    }
+
+    &__input-wrap {
+      margin-bottom: 20px;
+      @include tablet {
+        margin-bottom: 24px;
+      }
+    }
+
+    &__input-error {
+      color: var(--text-info);
+    }
+  }
+
+  .agreement {
+    margin-bottom: 32px;
+    @include tablet {
+      margin-bottom: 24px;
+    }
+
+    .checkbox {
+      margin-bottom: 8px;
+      position: absolute;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    &__checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      margin-bottom: 8px;
+
+      a {
+        color: var(--link-color);
+      }
+
+      .checkbox-view {
+        @include flex-center;
+        min-width: 20px;
+        min-height: 20px;
+        margin-right: 10px;
+        border: 1px solid var(--border-checkbox);
+        border-radius: 5px;
+        transition: .3s;
+
+        .icon--check {
+          width: 17px;
+          height: 16px;
+          fill: var(--icon-main);
+          opacity: 0;
+          transition: .3s;
+        }
+      }
+
+      .checkbox-description {
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: var(--title-color);
+      }
+
+      .checkbox:checked + .checkbox-view .icon--check {
+        opacity: 1;
+      }
+    }
+
+  }
+}
+
+

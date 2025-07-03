@@ -1,0 +1,43 @@
+<div class="link-email-modal" id="link-email-modal" style="display:flex">
+    <div class="link-email-modal__content">
+        <svg class="link-email-modal__icon" width="85" height="82" viewBox="0 0 85 82" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="M60.2564 7.66464C56.752 -0.656367 45.5981 -2.0448 40.1793 5.16545L3.37307 54.1399C-2.04573 61.3501 2.33468 71.7514 11.2578 72.8621L71.8666 80.4067C80.7897 81.5175 87.5632 72.5047 84.0589 64.1837L60.2564 7.66464Z"
+                  fill="url(#paint0_linear_299_84613)"/>
+            <g clip-path="url(#clip0_299_84613)">
+                <path d="M45.5 56.9V46.5M45.5 36.1H45.526M71.5 46.5C71.5 60.8594 59.8594 72.5 45.5 72.5C31.1406 72.5 19.5 60.8594 19.5 46.5C19.5 32.1406 31.1406 20.5 45.5 20.5C59.8594 20.5 71.5 32.1406 71.5 46.5Z"
+                      stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+                <linearGradient id="paint0_linear_299_84613" x1="1" y1="40.5" x2="85" y2="40.5"
+                                gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF7235"/>
+                    <stop offset="1" stop-color="#FF9141"/>
+                </linearGradient>
+                <clipPath id="clip0_299_84613">
+                    <rect width="32" height="32" fill="white" transform="translate(29 30)"/>
+                </clipPath>
+            </defs>
+        </svg>
+        <div class="link-email-modal__title-wrap">
+            <h2 class="link-email-modal__title">
+                Ссылка отправлена на почту
+            </h2>
+            <button type="button" class="link-email-modal__close-btn">
+                <svg class="icon icon--close">
+                    <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+                </svg>
+            </button>
+        </div>
+        <span class="link-email-modal__description">
+            На адрес email@gmail.com отправлена ссылка для сброса пароля
+        </span>
+        @@include('button.html', {
+        "type": "button",
+        "name":"Понятно",
+        "active": "active",
+        "class": "link-email-modal__agree",
+        "aria-label": "Нажать если понятно"
+        })
+    </div>
+</div>

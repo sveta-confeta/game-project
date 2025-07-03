@@ -1,0 +1,27 @@
+<div class="profile-modal hidden" id="profile-modal" aria-labelledby="profile-modal-title">
+    <div class="profile-modal__wrap">
+        <img src="./img/user-avatar.jpg" alt="user-avatar" class="profile-modal__auth-avatar">
+        <div>
+            <span class="profile-modal__title" id="profile-modal-title">профиль</span>
+            <span class="profile-modal__name" aria-label="Имя пользователя">
+                Svet
+            </span>
+        </div>
+        <a class="profile-modal__link" href="#" aria-label="arrow link">
+            <svg class="icon icon--arrow-small-xs">
+                <use href="./img/svgsprite/sprite.symbol.svg#arrow-small-xs"></use>
+            </svg>
+        </a>
+    </div>
+    @@include('currency.html',{})
+    <div class="profile-modal__setting-wrap">
+        <svg class="icon icon--setting">
+            <use href="./img/svgsprite/sprite.symbol.svg#setting"></use>
+        </svg>
+        <a class="profile-modal__settings" aria-label="Настройки профиля" href="#">Настройки</a>
+        <svg class="icon icon--arrow-small-xs">
+            <use href="./img/svgsprite/sprite.symbol.svg#arrow-small-xs"></use>
+        </svg>
+    </div>
+    <button type="submit" class="profile-modal__go-out" aria-label="Выйти из кабинета">Выйти из кабинета</button>
+</div>

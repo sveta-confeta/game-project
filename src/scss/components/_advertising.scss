@@ -1,0 +1,324 @@
+.advertising-wrap {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.advertising {
+  border-radius: 15px;
+  width: 100%;
+  padding: 8px 8px 3px 8px ;
+  position: relative;
+  overflow: hidden;
+  @include tablet {
+    height: 264px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  @include smallDesktop{
+    height: 300px;
+    gap: 24px;
+  }
+  @include desktop {
+    height: 344px;
+    gap: 32px;
+  }
+
+  &__img-wrap {
+    position: relative;
+  }
+  &__img-label-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  &__img-label {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 3px 12px;
+    color: var( --title-color);
+    background: var(--second-bg);
+    border-radius: 8px;
+    width: max-content;
+  }
+
+  &__img {
+    border-radius: 8px;
+    width: 100%;
+    object-fit: cover;
+    height: 214px;
+    @include tablet {
+      min-width: 174px;
+      width: 174px;
+      height: 240px;
+      max-height: 240px;
+    }
+    @include smallDesktop {
+      min-width: 286px;
+      width: 286px;
+      height: 276px;
+      max-height: 276px;
+    }
+    @include desktop {
+      min-width: 320px;
+      width: 320px;
+      height: 320px;
+      max-height: 320px;
+    }
+  }
+
+  &__content {
+    padding: 20px 8px 5px 8px;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.48px;
+    color: var(--white-text);
+    margin-bottom: 21px;
+    @include tablet {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.84px;
+      margin-bottom: 23px;
+    }
+    @include smallDesktop {
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 48px;
+      letter-spacing: -0.72px;
+      margin-bottom: 37px;
+    }
+  }
+
+  &__list-wrap {
+    &:not(:last-of-type) {
+      margin-bottom: 15px;
+      @include tablet {
+        margin-bottom: 20px;
+      }
+      @include desktop {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+
+  &__list-title {
+    color: var(--white-text);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125%;
+    letter-spacing: -0.32px;
+    margin-bottom: 10px;
+    display: block;
+    @include tablet {
+      font-size: 20px;
+      line-height: 110%;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 744px;
+    @include tablet {
+      max-width: 337px;
+    }
+    @include smallDesktop {
+      max-width: 414px;
+    }
+    @include desktop {
+      max-width: 744px;
+    }
+
+    &-item {
+      padding-right: 20px;
+      position: relative;
+      margin-bottom: 5px;
+      @include tablet {
+        margin-bottom: 4px;
+      }
+
+      &:not(:last-child)::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--white-text);
+        position: absolute;
+        top: 9px;
+        right: 8px;
+      }
+      a {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        color: var(--white-text);
+        @include tablet {
+          font-size: 14px;
+          line-height: 130%;
+        }
+      }
+    }
+  }
+
+  &__status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    @include tablet {
+      top: 24px;
+      right: 24px;
+    }
+    @include desktop {
+      top: 24px;
+      right: 55px;
+    }
+
+
+  }
+}
+.advertising--blue {
+  background-image: var(--bg-card-blue-gradient);
+  position: relative;
+  @include tablet {
+    &:before {
+      content: '';
+      position: absolute;
+      background-image: url("../../img/advertising/advertising-blue-bg-top.svg");
+      background-repeat: no-repeat;
+      background-size: 154px 187px;
+      bottom: 0;
+      right: 0;
+      width: 140px;
+      height: 187px;
+    }
+  }
+  @include smallDesktop {
+    &:before {
+      background-size: 214px 241px;
+      width: 177px;
+      height: 224px;
+    }
+  }
+  @include desktop {
+    &:before {
+      background-size: 228px 277px;
+      width: 218px;
+      height: 248px;
+    }
+  }
+}
+.advertising--red {
+  background-image: var(--bg-card-red-gradient);
+  position: relative;
+  @include tablet {
+    &:before {
+      content: '';
+      position: absolute;
+      background-image: url("../../img/advertising/advertising-red-bg-top.svg");
+      background-repeat: no-repeat;
+      background-size: 154px 187px;
+      bottom: 0;
+      right: 0;
+      width: 140px;
+      height: 187px;
+    }
+  }
+  @include smallDesktop {
+    &:before {
+      background-size: 200px 250px;
+      width: 173px;
+      height: 236px;
+    }
+  }
+  @include desktop {
+    &:before {
+      background-size: 246px 279px;
+      width: 249px;
+      height: 270px;
+    }
+  }
+}
+.advertising--purple {
+  background-image: var(--bg-card-purple-gradient);
+  position: relative;
+  @include tablet {
+    &:before {
+      content: '';
+      position: absolute;
+      background-image: url("../../img/advertising/advertising-purple-bg-top.svg");
+      background-repeat: no-repeat;
+      background-size: 154px 187px;
+      bottom: 0;
+      right: 0;
+      width: 140px;
+      height: 187px;
+    }
+  }
+  @include smallDesktop {
+    &:before {
+      background-size: 200px 250px;
+      width: 173px;
+      height: 236px;
+    }
+  }
+  @include desktop {
+    &:before {
+      background-size: 246px 279px;
+      width: 249px;
+      height: 270px;
+    }
+  }
+}
+@include tablet {
+ .advertising__list-item {
+    display: none;
+  }
+
+  .advertising__list-item:last-child {
+    display: block;
+  }
+
+  .advertising__list--first .advertising__list-item:nth-child(-n+4),
+  .advertising__list--second .advertising__list-item:nth-child(-n+7),
+  .advertising__list-item:last-child {
+    display: block;
+  }
+}
+@include smallDesktop {
+  .advertising__list--first .advertising__list-item:nth-child(-n+6),
+  .advertising__list--second .advertising__list-item:nth-child(-n+9),
+  .advertising__list-item:last-child {
+    display: block;
+  }
+}
+@include desktop {
+  .advertising__list--first .advertising__list-item:nth-child(-n+6),
+  .advertising__list--second .advertising__list-item ,
+  .advertising__list-item:last-child {
+    display: block;
+  }
+}

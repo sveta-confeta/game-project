@@ -1,0 +1,387 @@
+import Swiper from 'swiper';
+import { Navigation, Pagination, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+document.addEventListener("DOMContentLoaded", function () {
+    const storiesSlide = document.getElementById("storiesWrapper");
+    const slides = storiesSlide.querySelectorAll(".swiper-slide");
+    const sliderContents = document.querySelector(".storiesCards__content");
+    const timeChange = 7000;
+    let storiesSlider;
+
+    let activeSlideIndex = 0;
+    let intervalId;
+
+    const createProgressBars = (progressWrapper, images) => {
+        if (progressWrapper) {
+            progressWrapper.innerHTML = "";
+            images.forEach(() => {
+                const progress = document.createElement("div");
+                progress.className = "progress";
+                progress.innerHTML = `
+                    <span class="progress__line">
+                        <span class="progress__not-started"></span>
+                    </span>`;
+                progressWrapper.appendChild(progress);
+            });
+        }
+    };
+
+    const resetProgressBars = (progressWrapper) => {
+        const progressBars = progressWrapper?.querySelectorAll(".progress__not-started");
+        progressBars?.forEach(bar => {
+            bar.style.width = "0";
+            bar.style.transition = "none";
+        });
+    };
+
+    const updateProgressBars = (progressWrapper, currentIndex) => {
+        const progressBars = progressWrapper?.querySelectorAll(".progress__not-started");
+
+        progressBars?.forEach((bar, index) => {
+            if (index < currentIndex) {
+                bar.style.width = "100%";
+                bar.style.transition = "none";
+            } else if (index === currentIndex) {
+                bar.style.width = "0";
+                bar.style.transition = "none";
+                setTimeout(() => {
+                    bar.style.width = "100%";
+                    bar.style.transition = `width ${timeChange / 1000}s linear`;
+                }, 100);
+            } else {
+                bar.style.width = "0";
+                bar.style.transition = "none";
+            }
+        });
+    };
+
+    const updateContent = (slide, currentIndex) => {
+        const images = JSON.parse(slide?.getAttribute("data-images") || "[]");
+        const titles = JSON.parse(slide?.getAttribute("data-title") || "[]");
+        const texts = JSON.parse(slide?.getAttribute("data-text") || "[]");
+        const buttonTitles = JSON.parse(slide?.getAttribute("data-button") || "[]");
+        const imgElement = slide?.querySelector("img");
+        const pictureElement = slide?.querySelector("picture");
+        const sources = pictureElement?.querySelectorAll("source");
+        const titleElement = slide?.querySelector(".storiesCards__content__bottom-title");
+        const textElement = slide?.querySelector(".storiesCards__content__bottom-text");
+        const buttonElement = slide?.querySelector(".storiesCards__btn");
+        const closeButton = slide?.querySelector(".close-button");
+
+        if (closeButton) {
+            closeButton.addEventListener("click", () => {
+                storiesSlide.classList.remove("storiesCards__open");
+                document.body.style.overflow = "auto";
+            });
+        }
+
+        if (imgElement) {
+            imgElement.src = images[currentIndex];
+        }
+
+        if (sources?.length === 2) {
+            sources[0].srcset = images[currentIndex];
+            sources[1].srcset = images[currentIndex];
+        }
+
+        if (titleElement) {
+            titleElement.textContent = titles[currentIndex];
+        }
+
+        if (textElement) {
+            textElement.textContent = texts[currentIndex];
+        }
+
+        if (buttonElement) {
+            buttonElement.textContent = buttonTitles[currentIndex];
+        }
+
+
+        if (currentIndex === images.length - 1) {
+            const nextSlideIndex = storiesSlider.activeIndex + 1;
+            const nextSlide = storiesSlider.slides[nextSlideIndex];
+            setTimeout(() => {
+                if (nextSlide) {
+                    storiesSlider.slideTo(nextSlideIndex, 600);
+                    startSlideShow(nextSlide, 0);
+                } else {
+                    closeSlider();
+                }
+            }, timeChange)
+        }
+    };
+
+    const stopSlideShow = () => {
+        clearInterval(intervalId);
+    };
+
+    const startSlideShow = (slide, currentIndex) => {
+        console.log('startSlideShow', slide, currentIndex)
+        const progressWrapper = slide?.querySelector(".progressWrapper");
+        const images = JSON.parse(slide?.getAttribute("data-images") || "[]");
+
+        stopSlideShow();
+        intervalId = setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateContent(slide, currentIndex);
+            resetProgressBars(progressWrapper);
+            updateProgressBars(progressWrapper, currentIndex);
+        }, timeChange);
+
+        resetProgressBars(progressWrapper);
+        updateProgressBars(progressWrapper, currentIndex);
+    };
+
+    const slideIndices = new Array(slides.length).fill(0);
+
+    slides.forEach((slide, index) => {
+        const progressWrapper = slide?.querySelector(".progressWrapper");
+        const images = JSON.parse(slide?.getAttribute("data-images") || "[]");
+
+        createProgressBars(progressWrapper, images);
+
+        const prevButton = slide?.querySelector(".prev");
+        const nextButton = slide?.querySelector(".next");
+
+        const updateSlideContent = () => {
+            updateContent(slide, slideIndices[index]);
+            resetProgressBars(progressWrapper);
+            updateProgressBars(progressWrapper, slideIndices[index], 7000);
+            startSlideShow(slide, slideIndices[index]);
+        };
+
+        const switchToPrevImage = () => {
+            stopSlideShow();
+
+            if (window.innerWidth <= 500) {
+                // Transition to previous image and slide
+                if (slideIndices[index] > 0) {
+                    slideIndices[index]--; // Update currentIndex for the current slide
+                } else {
+                    const prevSlideIndex = activeSlideIndex > 0 ? activeSlideIndex - 1 : slides.length - 1;
+                    const prevSlide = slides[prevSlideIndex];
+                    const images = JSON.parse(prevSlide?.getAttribute("data-images") || "[]");
+                    slideIndices[prevSlideIndex] = images.length - 1; // Update currentIndex for the previous slide
+                    storiesSlider.slideTo(prevSlideIndex, 600); // Specify animation
+                    activeSlideIndex = prevSlideIndex;
+                }
+                const slide = slides[activeSlideIndex];
+                updateContent(slide, slideIndices[activeSlideIndex]);
+                resetProgressBars(slide.querySelector(".progressWrapper")); // Reset progress bars
+                startSlideShow(slide, slideIndices[activeSlideIndex]); // Start slide show
+            } else {
+                slideIndices[index] = slideIndices[index] > 0 ? slideIndices[index] - 1 : images.length - 1; // Update currentIndex for the current slide
+                updateContent(slide, slideIndices[index]);
+                resetProgressBars(slide.querySelector(".progressWrapper"));
+                startSlideShow(slide, slideIndices[index]);
+            }
+        };
+
+        const switchToNextImage = () => {
+            stopSlideShow();
+            if (window.innerWidth <= 500) {
+                if (slideIndices[index] < images.length - 1) {
+                    slideIndices[index]++;
+                } else {
+                    const nextSlideIndex = activeSlideIndex < slides.length - 1 ? activeSlideIndex + 1 : 0;
+                    slideIndices[nextSlideIndex] = 0;
+                    storiesSlider.slideTo(nextSlideIndex, 600); // Specify animation
+                    activeSlideIndex = nextSlideIndex;
+                }
+                const slide = slides[activeSlideIndex];
+                updateContent(slide, slideIndices[activeSlideIndex]);
+                resetProgressBars(slide.querySelector(".progressWrapper"));
+                startSlideShow(slide, slideIndices[activeSlideIndex]);
+            } else {
+                slideIndices[index] = slideIndices[index] < images.length - 1 ? slideIndices[index] + 1 : 0;
+                updateContent(slide, slideIndices[index]);
+                resetProgressBars(slide.querySelector(".progressWrapper"));
+                startSlideShow(slide, slideIndices[index]);
+            }
+        };
+
+        if (prevButton) {
+            prevButton.removeEventListener("click", switchToPrevImage);
+            prevButton.addEventListener("click", switchToPrevImage);
+        }
+
+        if (nextButton) {
+            nextButton.removeEventListener("click", switchToNextImage);
+            nextButton.addEventListener("click", switchToNextImage);
+        }
+
+        updateContent(slide, slideIndices[index]);
+    });
+
+
+    document.addEventListener("click", function (event) {
+        if (storiesSlide.contains(event.target)) {
+            if (!event.target.closest(".swiper-slide")) {
+                event.preventDefault();
+                storiesSlide.classList.remove("storiesCards__open");
+                activeSlideIndex = 0;
+                stopSlideShow();
+            }
+        }
+    });
+
+    const mainSlider = new Swiper("#swiperCard", {
+        modules: [Navigation],
+        slidesPerView: 'auto',
+        initialSlide: 0,
+        speed: 900,
+        centeredSlides: false,
+        freeMode: true,
+        freeModeSticky: true,
+        slidesPerGroup: 1,
+        navigation: {
+            nextEl: '.swiper-button-next-stories',
+            prevEl: '.swiper-button-prev-stories',
+        },
+        breakpoints: {
+            320: {
+                spaceBetween: 6
+            },
+            768: {
+                spaceBetween: 12
+            }
+        },
+        on: {
+            slideChange: updateFog,
+            transitionEnd: updateFog,
+            touchMove: updateFog,
+        }
+    });
+
+    function updateFog() {
+        const isBeginning = mainSlider.isBeginning;
+        const isEnd = mainSlider.isEnd;
+
+        const fogLeft = document.querySelector('.fog-left');
+        const fogRight = document.querySelector('.fog-right');
+
+        if (fogLeft && fogRight) {
+            fogLeft.style.opacity = isBeginning ? '0' : '1';
+            fogRight.style.opacity = isEnd ? '0' : '1';
+        }
+    }
+    updateFog();
+
+
+
+    function initSwiper() {
+        if (window.innerWidth <= 500) {
+            if (storiesSlider) storiesSlider.destroy(true, true);
+            storiesSlider = new Swiper("#stories", {
+                modules: [EffectFade],
+                initialSlide: activeSlideIndex,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                centeredSlides: true,
+                slideToClickedSlide: true,
+                allowTouchMove: false,
+                noSwiping: true,
+                speed: 600,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                }
+            });
+            storiesSlide.addEventListener('touchstart', handleTouchStart);
+            storiesSlide.addEventListener('touchmove', handleTouchMove);
+        } else {
+            if (storiesSlider) storiesSlider.destroy(true, true);
+            storiesSlider = new Swiper("#stories", {
+                initialSlide: activeSlideIndex,
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                centeredSlides: true,
+                slideToClickedSlide: true,
+                allowTouchMove: false,
+                observer: true,
+                observeParents: true,
+                noSwiping: true,
+                speed: 400,
+            });
+        }
+    }
+
+    initSwiper();
+    window.addEventListener('resize', initSwiper);
+
+    storiesSlider.on('slideChange', function () {
+        const activeSlide = storiesSlider.slides[storiesSlider.activeIndex];
+        activeSlide.classList.add('swiper-slide-active');
+    });
+
+    mainSlider.on("click", function (swiper) {
+        const clickedSlide = swiper.clickedSlide;
+        activeSlideIndex = swiper.clickedIndex;
+
+        if (clickedSlide) {
+            clickedSlide.classList.add('semi-transparent');
+            storiesSlider.slideTo(activeSlideIndex);
+        }
+
+        storiesSlide.classList.add("storiesCards__open");
+        document.body.classList.add("no-scroll-all");
+
+        const activeSlide = slides[activeSlideIndex];
+        startSlideShow(activeSlide, 0);
+    });
+
+    function handleSlideClick() {
+        let isClickOnSlide = false;
+
+        slides.forEach(slide => {
+            if (slide.contains(event.target)) {
+                isClickOnSlide = true;
+            }
+        });
+
+        if (!isClickOnSlide) {
+            closeSlider();
+        }
+    };
+
+    function closeSlider() {
+        console.log('ff');
+        storiesSlide.classList.remove("storiesCards__open");
+        activeSlideIndex = 0;
+        document.body.classList.remove("no-scroll-all");
+
+        stopSlideShow();
+    }
+
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    function handleTouchStart(event) {
+        touchStartY = event.touches[0].clientY;
+    }
+
+    function handleTouchMove(event) {
+        touchEndY = event.touches[0].clientY;
+        if (touchStartY - touchEndY < -100) {
+            closeSlider();
+        }
+    }
+
+    sliderContents.addEventListener("click", handleSlideClick);
+    storiesSlide.addEventListener("click", handleSlideClick);
+
+    storiesSlider.on("click", function (swiper) {
+        const clickedSlide = swiper.clickedSlide;
+        activeSlideIndex = swiper.clickedIndex;
+
+        if (clickedSlide) {
+            startSlideShow(clickedSlide, 0);
+        }
+    });
+
+});
+

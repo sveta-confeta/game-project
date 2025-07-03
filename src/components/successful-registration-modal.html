@@ -1,0 +1,35 @@
+<div class="successful-registration-modal" id="successful-registration-modal" style="display:flex">
+    <div class="successful-registration-modal__content">
+        <svg class="successful-registration-modal__icon" width="85" height="81" viewBox="0 0 85 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M59.7564 7.16464C56.252 -1.15637 45.0981 -2.5448 39.6793 4.66545L2.87307 53.6399C-2.54573 60.8501 1.83468 71.2514 10.7578 72.3621L71.3666 79.9067C80.2897 81.0175 87.0632 72.0047 83.5589 63.6837L59.7564 7.16464Z" fill="url(#paint0_linear_299_84639)"/>
+            <path d="M56.1668 37.5L41.5002 52.1667L34.8335 45.5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+                <linearGradient id="paint0_linear_299_84639" x1="84.766" y1="75.6753" x2="6.46493" y2="33.9354" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#25ABE4"/>
+                    <stop offset="1" stop-color="#255FE4"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="successful-registration-modal__title-wrap">
+            <h2 class="successful-registration-modal__title">
+                Регистрация завершена
+            </h2>
+            <button type="button" class="successful-registration-modal__close-btn">
+                <svg class="icon icon--close">
+                    <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+                </svg>
+            </button>
+        </div>
+        <span class="successful-registration-modal__description">
+           Учетная запись активирована!
+        </span>
+        @@include('button.html', {
+        "type": "button",
+        "name":"Понятно",
+        "active": "active",
+        "class": "successful-registration-modal__agree",
+        "aria-label": "Нажать если понятно"
+        })
+    </div>
+</div>

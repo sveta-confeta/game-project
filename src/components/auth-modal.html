@@ -1,0 +1,186 @@
+<div class="auth-modal" id="auth-modal" style="display:none">
+    <div class="auth-modal__header">
+        <button type="button"  class="auth-modal__header-back" aria-label="return to main page">
+            <svg class="icon icon--arrow-back">
+                <use href="./img/svgsprite/sprite.symbol.svg#arrow-back"></use>
+            </svg>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="32" viewBox="0 0 87 32" fill="none">
+            <g clip-path="url(#clip0_464_1622)">
+                <path d="M80.9054 23.582V20.1861L87.5 8.42041H83.7996L79.4148 16.6685H79.2263L74.7487 8.42041H70.9845L77.5791 20.1861V23.582H80.9054ZM65.3411 12.0595H65.5586L67.9859 18.0032H62.9167L65.3411 12.0595ZM63.8186 8.42041L56.9137 23.582H60.4285L61.6407 20.8845H69.2909L70.506 23.582H74.1136L67.2087 8.42041H63.8186ZM52.3375 16.7279H47.9817V11.3017H52.12C52.99 11.3017 53.7353 11.6043 54.2341 12.1783C54.6082 12.6646 54.8866 13.3009 54.8866 14.0304C54.8866 14.7882 54.6372 15.4244 54.1732 15.939C53.7353 16.4565 53.1118 16.7279 52.3375 16.7279ZM58.2158 14.0304C58.2158 12.4837 57.5923 11.149 56.5976 10.1792C55.5101 9.05662 53.9847 8.42041 52.2447 8.42041H44.6554V23.582H47.9817V19.6092H52.2447C53.9847 19.6092 55.571 18.9108 56.6614 17.8194C57.6242 16.8184 58.2158 15.4838 58.2158 14.0304ZM28.3081 17.1521V8.42041H24.9818V17.3047C24.9818 18.4245 24.6077 19.3067 24.0161 19.9118C23.3955 20.548 22.5255 20.9439 21.4351 20.9439C20.3795 20.9439 19.5066 20.5791 18.8222 19.8835C18.1697 19.2445 17.8275 18.3651 17.8275 17.3047V8.42041H14.5012V17.1521C14.5012 19.0013 15.2465 20.6696 16.4587 21.9137C17.6709 23.0957 19.321 23.8252 21.4351 23.8252C23.3955 23.8252 25.0137 23.1579 26.2259 22.0664C27.5628 20.8223 28.3081 19.0946 28.3081 17.1521ZM0.5 8.42041V23.582H3.8292V17.6384H11.5722V14.7571H3.8292V11.33H12.535V8.42041H0.5Z" fill="#151515"/>
+                <path d="M28.6995 8.42061L36.4802 0L44.2638 8.42061H40.6011V18.337L32.1418 8.42061H28.6995ZM44.2638 23.5822L36.4802 32L28.6995 23.5822H32.3912V13.6347L40.8186 23.5822H44.2638Z" fill="#255FE4"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_464_1622">
+                    <rect width="87" height="32" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+
+    </div>
+    <div class="auth-modal__content">
+        <button type="button" class="auth-modal__close-btn">
+            <svg class="icon icon--close">
+                <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+            </svg>
+        </button>
+        <ul class="auth-modal__tabs-list">
+            <li class="auth-modal__tabs-item">
+                <button type="button"
+                        class="auth-modal__tabs-item-btn auth-modal__tabs-item-btn--active"
+                        aria-selected="true"
+                        role="tab"
+                        aria-label="Вход для авторизации"
+                        data-tabs-path="login">
+                    Вход
+                </button>
+            </li>
+            <li class="auth-modal__tabs-item">
+                <button type="button"
+                        class="auth-modal__tabs-item-btn"
+                        data-tabs-path="registration"
+                        aria-selected="true"
+                        aria-label="Зарегистрироваться"
+                        role="tab">
+                    Регистрация
+                </button>
+            </li>
+        </ul>
+        <div class="auth-modal__tabs-content auth-modal__tabs-content--active" role="tabpanel" data-tabs-target="login">
+            <form class="login">
+                <div class="login__input-wrap">
+                    @@include('input.html', {
+                    "inputId": "login-name",
+                    "label": "Имя или почта",
+                    "type": "text",
+                    "inputClass":"login__input-name",
+                    "placeholder": "Имя или почта",
+                    "info" : ""
+                    })
+                </div>
+                <div class="login__input-wrap">
+                    @@include('input-password.html', {
+                    "wrapClass": "login__input-wrap",
+                    "inputId": "login-password",
+                    "inputClass": "login__input-password",
+                    "info" : ""
+                    })
+                </div>
+                <a class="login__link" href="#">Забыли пароль?</a>
+                <!--            <div class="login__capcha">-->
+                <!--            </div>-->
+                <div class="login__btns-wrap">
+                    @@include('button.html', {
+                    "type": "submit",
+                    "name":"Войти",
+                    "active": "active",
+                    "class": "login__btn",
+                    "aria-label": "Вход"
+                    })
+                    <button class="login__btn login__btn--gray"
+                            aria-label="Войти через соцсеть Вконтакте"
+                            type="submit">
+                        <svg class="icon icon--vk">
+                            <use href="./img/svgsprite/sprite.symbol.svg#vk"></use>
+                        </svg>
+                        <span>Войти через ВКонтакте</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="auth-modal__tabs-content" data-tabs-target="registration" role="tabpanel">
+            <form class="registration">
+                <button class="registration__btn registration__btn--gray"
+                        aria-label="Регистрация через соцсеть Вконтакте"
+                        type="submit">
+                    <svg class="icon icon--vk">
+                        <use href="./img/svgsprite/sprite.symbol.svg#vk"></use>
+                    </svg>
+                    <span>Регистрация через VK ID</span>
+                </button>
+                <div class="registration__input-wrap">
+                    @@include('input.html', {
+                    "inputId": "registration-nickname",
+                    "label": "Имя или ник",
+                    "type": "text",
+                    "placeholder": "Имя или ник",
+                    "inputClass": "registration__input-name",
+                    "info" : "Латинские буквы и цифры"
+                    })
+                </div>
+                <div class="registration__input-wrap">
+                    @@include('input.html', {
+                    "wrapClass": "registration__input-wrap",
+                    "inputId": "registration-email",
+                    "label": "Почта",
+                    "type": "email",
+                    "placeholder": "Почта",
+                    "inputClass": "registration__input-email",
+                    "info" : "Требуется для активации учетной записи"
+                    })
+                </div>
+                <div class="registration__input-wrap">
+                    @@include('input-password.html', {
+                    "inputId": "registration-password",
+                    "inputClass": "registration__input-password",
+                    "info" : "Минимум 6 символов"
+                    })
+                </div>
+                <div class="agreement">
+                    <label class="agreement__checkbox-label">
+                        <input type="checkbox" class="checkbox">
+                        <span class="checkbox-view">
+                             <svg class="icon--check" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M14.6888 3.76577C14.7553 3.82397 14.8095 3.89482 14.8484 3.97418C14.8873 4.05354 14.9099 4.13984 14.9152 4.22805C14.9204 4.31626 14.908 4.40463 14.8787 4.48801C14.8495 4.5714 14.804 4.64814 14.7448 4.71377L7.73546 12.4931C7.67601 12.559 7.604 12.6123 7.52366 12.65C7.44332 12.6877 7.35626 12.709 7.26759 12.7126C7.17892 12.7162 7.09043 12.702 7.0073 12.671C6.92416 12.6399 6.84806 12.5926 6.78346 12.5318L2.72746 8.71377C2.60578 8.59758 2.53211 8.43998 2.521 8.27211C2.50989 8.10424 2.56215 7.9383 2.66746 7.8071C2.72431 7.73597 2.79501 7.67713 2.87529 7.63416C2.95557 7.59119 3.04374 7.56498 3.13445 7.55712C3.22517 7.54927 3.31653 7.55993 3.403 7.58846C3.48947 7.61699 3.56924 7.6628 3.63746 7.7231L6.78413 10.5538C6.91552 10.672 7.08849 10.7333 7.26501 10.724C7.44153 10.7148 7.60716 10.6358 7.72546 10.5044L13.7541 3.81977C13.8715 3.68966 14.0353 3.61098 14.2103 3.60075C14.3852 3.59052 14.5571 3.64956 14.6888 3.7651V3.76577Z"
+                                        fill="#151515"/>
+                             </svg>
+                         </span>
+                        <span class="checkbox-description">
+                        <a href="#"> С лицензионным соглашением</a>, включая <a href="#">агентский договор</a>, <a
+                                href="#">правилами сайта </a>ознакомился, принимаю
+                        в полном объеме
+                        </span>
+                    </label>
+                </div>
+                <!--            <div class="registration__capcha">-->
+                <!--            </div>-->
+                @@include('button.html', {
+                "type": "submit",
+                "name":"Зарегистрироваться",
+                "active": "active",
+                "class": "registration__button",
+                "aria-label": "Зарегистрироваться"
+                })
+                <a class="registration__link" id="existing-account-link" href="#">Уже есть учетная запись?</a>
+            </form>
+        </div>
+        <div class="auth-modal__tabs-content" data-tabs-target="recovery" role="tabpanel">
+            <form class="recovery">
+            <span class="recovery__title">
+                Восстановление пароля
+            </span>
+                <div class="recovery__input-wrap">
+                    @@include('input.html', {
+                    "inputId": "recovery-nickname",
+                    "label": "Имя или ник",
+                    "type": "text",
+                    "placeholder": "Имя или ник",
+                    "inputClass": "recovery__input-name",
+                    "info" : "Ссылка для восстановления придет на почту"
+                    })
+                </div>
+                <!--            <div class="recovery__capcha">-->
+                <!--            </div>-->
+                @@include('button.html', {
+                "type": "submit",
+                "name":"Восстановить",
+                "active": "active",
+                "class": "recovery__btn",
+                "aria-label": "Восстановить пароль"
+                })
+            </form>
+        </div>
+    </div>
+</div>

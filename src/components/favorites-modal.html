@@ -1,0 +1,30 @@
+<div class="favorites-modal  visually-hidden" id="favorites-modal"  aria-modal="true">
+    <button type="button" class="favorites-modal__close-btn" aria-label="Close modal">
+        <svg class="icon icon--close" aria-hidden="true">
+            <use href="./img/svgsprite/sprite.symbol.svg#close"></use>
+        </svg>
+    </button>
+    <span class="favorites-modal__title" role="heading">
+        Избранное
+    </span>
+    <ul class="favorites-modal__list">
+        <li class="favorites-modal__list-item">
+            @@include('game-status-card.html',{
+            "img": "./img/often-searched/img1.jpg",
+            "status": "",
+            "title": "Aion Classic" })
+        </li>
+        <li class="favorites-modal__list-item">
+            @@include('game-status-card.html',{
+            "img": "./img/often-searched/img2.jpg",
+            "status": "",
+            "title": "Assassin’s Creed"} )
+        </li>
+        <li class="favorites-modal__list-item">
+            @@include('game-status-card.html',{
+            "img": "./img/often-searched/img3.jpg",
+            "status": "",
+            "title": "Assassin’s Creed"} )
+        </li>
+    </ul>
+</div>

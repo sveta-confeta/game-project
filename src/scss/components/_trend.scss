@@ -1,0 +1,155 @@
+.trend {
+  margin-bottom: 40px;
+  overflow: hidden;
+  @include tablet {
+    margin-bottom: 46px;
+  }
+  @include smallDesktop {
+    margin-bottom: 61px;
+  }
+  @include desktop {
+    max-width: var(--container-width-desktop);
+    width: 100%;
+    margin: 0 auto 60px auto;
+  }
+  &__title-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    @include tablet {
+      margin-bottom: 1px;
+    }
+  }
+  &__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.48px;
+    color: var(--title-color);
+    margin-left: 16px;
+    @include tablet {
+      font-size: 28px;
+      letter-spacing: -0.72px;
+      margin-bottom: 15px;
+      line-height: 32px;
+    }
+    @include smallDesktop {
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 48px;
+      letter-spacing: -0.72px;
+    }
+    @include desktop {
+      margin-left: 0;
+    }
+  }
+  &__buttons {
+    display: none;
+    @include smallDesktop {
+      display: flex;
+      margin-left: auto;
+      position: relative;
+      z-index: 1;
+      width: 92px;
+      height: 42px;
+      justify-content: space-between;
+      margin-right: 16px;
+      margin-top: -13px;
+
+    }
+    .swiper-button-prev {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .swiper-button-next {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+
+  }
+
+  .icon--fire {
+    width: 27px;
+    height: 26px;
+    fill: var(--red);
+    margin-left: 8px;
+    @include tablet {
+      width: 32px;
+      height: 32px;
+      margin-top: -12px;
+    }
+    @include smallDesktop {
+      width: 43px;
+      height: 42px;
+      margin-top: -10px;
+    }
+  }
+  .swiper {
+    z-index: 0;
+    padding-right: 16px;
+    @include desktop {
+      padding-right: 0;
+    }
+  }
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+  }
+  .swiper-slide {
+    width: 155px !important;
+    @include tablet {
+      width: 384px !important;
+      height: 146px !important;
+    }
+  }
+  .swiper-slide:nth-child(1) {
+    margin-left: 16px !important;
+    @include desktop {
+      margin-left: 0 !important;
+    }
+  }
+  .swiper-button-disabled {
+    border-radius: 8px;
+    background: rgba(129, 141, 166, 0.08);
+    .icon--arrow {
+     stroke: var( --light-grey);
+    }
+  }
+  .trend-pagination {
+    @include flex-center;
+    .swiper-pagination-bullets .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: 0 2px;
+      transition: background-color 0.5s ease;
+      opacity: 1 !important;
+      background-color: #E0E2E6 !important;
+    }
+    .swiper-pagination-bullet {
+      background-color: #E0E2E6 !important;
+      opacity: 1 !important;
+      cursor: pointer;
+      margin: 0 2px;
+      transition: background-color 0.5s ease;
+    }
+
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--main-blue) !important;
+      width: 12px !important;
+      height: 12px !important;
+    }
+
+    .swiper-pagination-clickable .swiper-pagination-bullet {
+      background-color: #E0E2E6 !important;
+    }
+  }
+
+}

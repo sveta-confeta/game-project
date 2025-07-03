@@ -1,0 +1,88 @@
+<section class="games" aria-labelledby="games-title">
+    <div class="games__wrap">
+        <div class="games__wrap-title">
+            <h2 class="games__title" id="games-title">
+                Игры
+            </h2>
+            <img class="games__icon" src="./img/game.svg" alt="game" aria-hidden="true">
+        </div>
+        <ul class="games__filters" aria-label="Game filters">
+            <li class="games__filter" role="presentation">
+                @@include('button.html', { "type": "button", "name":"Всё", "action": "change",
+                "active": "active", "class": "games__filter-btn", "aria-label": "Показать всё" })
+            </li>
+            <li class="games__filter" role="presentation">
+                @@include('button.html', { "type": "button", "name":"Игры", "action": "change", "active": "", "class": "games__filter-btn", "aria-label": "Показать только игры" })
+            </li>
+            <li class="games__filter" role="presentation">
+                @@include('button.html', { "type": "button", "name":"Соцсети", "action": "change", "active": "", "class": "games__filter-btn", "aria-label": "Показать только соцсети" })
+            </li>
+            <li class="games__filter" role="presentation">
+                @@include('button.html', {
+                "type": "button",
+                "name":"Фриланс",
+                "action": "change",
+                "active": "",
+                "class": "games__filter-btn",
+                "aria-label": "Показать только фриланс"
+
+                })
+            </li>
+        </ul>
+        <div class="games__list-wrap">
+            <div role="list" class="games__list">
+                <div class="games__list-cards">
+                    @@loop('game-status-card.html', '../data/status-card.json')
+                    @@include('game-status-card.html', { "img": "./img/game-card.jpg", "title": "AFK Arena", "status": "хит", "class": "status-card--hit" })
+                    @@loop('game-card.html', '../data/game-card.json')
+                </div>
+                @@include('advertising.html',{ "class": "advertising--blue",})
+                @@include('advertising.html',{ "class": "advertising--red",})
+                @@include('advertising.html',{ "class": "advertising--purple",})
+            </div>
+            <nav class="games__nav" aria-labelledby="nav-abc-title">
+                <h2 id="nav-abc-title" class="visually-hidden">Навигация по играм</h2>
+                <ul class="nav games__nav-list" id="nav-abc" role="navigation" aria-label="Alphabetical Navigation">
+                    <li><a class="highlighted" href="#letterA">A</a></li>
+                    <li><a href="#letterB">B</a></li>
+                    <li><a href="#letterC">C</a></li>
+                    <li><a href="#letterD">D</a></li>
+                    <li><a href="#letterE">E</a></li>
+                    <li><a href="#letterF">F</a></li>
+                    <li><a href="#letterG">G</a></li>
+                    <li><a href="#letterH">H</a></li>
+                    <li><a href="#letterI">I</a></li>
+                    <li><a href="#letterK">K</a></li>
+                    <li><a href="#letterL">L</a></li>
+                    <li><a href="#letterM">M</a></li>
+                    <li><a href="#letterN">N</a></li>
+                    <li><a href="#letterO">O</a></li>
+                    <li><a href="#letterP">P</a></li>
+                    <li><a href="#letterR">R</a></li>
+                    <li><a href="#letterS">S</a></li>
+                    <li><a href="#letterT">T</a></li>
+                    <li><a href="#letterU">U</a></li>
+                    <li><a href="#letterV">V</a></li>
+                    <li><a href="#letterW">W</a></li>
+                    <li><a href="#letterX">X</a></li>
+                    <li><a href="#letterY">Y</a></li>
+                    <li><a href="#letterZ">Z</a></li>
+                    <li><a href="#letterА">А</a></li>
+                    <li><a href="#letterВ">В</a></li>
+                    <li><a href="#letterГ">Г</a></li>
+                    <li><a href="#letterД">Д</a></li>
+                    <li><a href="#letterК">К</a></li>
+                    <li><a href="#letterЛ">Л</a></li>
+                    <li><a href="#letterМ">М</a></li>
+                    <li><a href="#letterО">О</a></li>
+                    <li><a href="#letterП">П</a></li>
+                    <li><a href="#letterР">Р</a></li>
+                    <li><a href="#letterТ">Т</a></li>
+                    <li><a href="#letterШ">Ш</a></li>
+                    <li><a href="#letter8">8</a></li>
+                </ul>
+            </nav>
+        </div>
+        @@include('secret-chat.html',{})
+    </div>
+</section>

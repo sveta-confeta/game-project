@@ -1,0 +1,97 @@
+.favorites-menu {
+  position: absolute;
+  background-color: var(--main-bg);
+  top: 0;
+  width: 100%;
+  z-index: 32;
+  height: var(--height100vh);
+  padding: 24px 16px 16px;
+  overflow: auto;
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    @include tablet {
+      margin-bottom: 20px;
+    }
+    &-btn {
+      transform: rotate(90deg);
+      .icon--arrow-small {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        stroke: var( --gray);
+      }
+    }
+    &-title {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px;
+      color: var(--title-color);
+      @include tablet {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -0.48px;
+      }
+    }
+  }
+  &__list-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .game-status-card {
+      height: min-content;
+      &__status {
+        right: 16px;
+        top: 16px;
+      }
+      &__wrap-order {
+        gap: 8px;
+      }
+    }
+    .game-card {
+      height: min-content;
+    }
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      .game-status-card {
+        height: 154px;
+        grid-column: span 2;
+      }
+      .game-status-card__wrap {
+        height: 100%;
+        padding: 8px 0;
+      }
+      .game-status-card__img {
+        width: 130px;
+        min-width: 130px;
+        height: 130px;
+        margin-right: 20px;
+      }
+      .game-status-card__title {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        margin-bottom: 4px;
+      }
+      .game-status-card__status {
+        right: 12px;
+        top: 12px;
+      }
+      .game-card {
+        height: 140px;
+      }
+    }
+  }
+  .favorites-message-modal {
+    max-width: 345px;
+  }
+}

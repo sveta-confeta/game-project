@@ -1,0 +1,404 @@
+.often-searched {
+  position: fixed;
+  z-index: 31;
+  background: var(--main-bg);
+  padding: 24px 16px 20px 16px;
+  width: 100%;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  transform: translateY(0);
+
+  @include tablet {
+    top: 83px;
+    background: var(--second-bg);
+    overflow-y: auto;
+    border-radius: 20px;
+    padding: 4px 0 4px 24px;
+    width: calc(100% - 32px);
+    max-width: 1408px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-right: 20px solid var(--second-bg);
+    border-top: 20px solid var(--second-bg);
+    border-bottom: 20px solid var(--second-bg);
+  }
+  @include smallDesktop {
+    top: 93px;
+  }
+  &__content {
+    overflow-y: auto;
+    max-height: calc(var(--height100vh) - 115px);
+    background: var(--main-bg);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    @include tablet {
+      background: var(--second-bg);
+      overflow-y: hidden;
+      max-height: initial;
+    }
+
+  }
+  &__search-wrap {
+    @include flex-center;
+    gap: 16px;
+    margin-bottom: 24px;
+    @include tablet {
+      display: none;
+    }
+  }
+  .icon--arrow-back {
+    width: 24px;
+    height: 20px;
+    min-width: 24px;
+    stroke: var(--gray);
+    z-index: 1;
+  }
+
+  &__search {
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid var(--blue);
+    align-items: center;
+    min-height: 48px;
+    height: 48px;
+    flex-grow: 1;
+    width: 100%;
+    padding: 12px;
+    position: relative;
+    background: var(--second-bg);
+    @include tablet {
+      height: auto;
+      margin-right: 59px;
+      padding: 0 12px;
+      width: 100%;
+    }
+    .icon--search {
+      margin-top: 5px;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      fill: var(--gray);
+      z-index: 1;
+    }
+
+    &-input {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: var(--second-bg);
+      padding-left: 5px;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.14px;
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--light-grey);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    &-close-btn {
+      .icon--close {
+        width: 14px;
+        height: 14px;
+        fill: var(--text-input);
+        stroke: var(--text-input);
+      }
+    }
+  }
+
+  .not-found {
+    margin-bottom: 24px;
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      display: block;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      color: var(--text-info);
+      margin-bottom: 6px;
+      @include tablet {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 48px;
+        letter-spacing: -0.72px;
+        margin-bottom: 6px;
+      }
+    }
+
+    &__text {
+      display: block;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      color: var(--text-info);
+    }
+  }
+
+  .searched,
+  .found {
+    margin-bottom: 20px;
+    @include tablet {
+      margin-bottom: 32px;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 110%;
+      letter-spacing: -0.4px;
+      color: var(--title-color);
+      margin-bottom: 16px;
+      display: block;
+      @include tablet {
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: -0.72px;
+        line-height: 48px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+      @include tablet {
+         gap: 32px;
+      }
+      @include smallDesktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      @include desktop {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      &-item {
+        height: 100%;
+
+        .game-status-card {
+          box-shadow: none;
+          background: var(--second-bg);
+          border-radius: 15px;
+          gap: 12px;
+          @include tablet {
+            height: 100%;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+            display: flex;
+            gap: 16px;
+          }
+          &__wrap {
+            @include tablet {
+              padding: 8px 0;
+            }
+          }
+          &__title {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: -0.16px;
+            margin-bottom: 4px;
+            @include tablet {
+              font-size: 28px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 32px;
+              letter-spacing: -0.84px;
+              margin-bottom: 8px;
+            }
+          }
+          &__img {
+            width: 52px;
+            min-width: 52px;
+            height: 52px;
+            border-radius: 10px;
+            margin-right: 0;
+            @include tablet {
+              width: 130px;
+              min-width: 130px;
+              height: 130px;
+              border-radius: 15px;
+            }
+          }
+          &__status {
+           display: none;
+          }
+          &__wrap-order {
+            gap: 0;
+            @include tablet {
+              gap:9px;
+            }
+          }
+
+          &__list-title a {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            @include tablet {
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 20px;
+            }
+
+          }
+          &__wrap {
+            @include tablet {
+              height: 130px;
+            }}
+          &__list-titles {
+            margin-bottom: 8px;
+            @include tablet {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--title-color);
+    margin-bottom: 16px;
+    display: block;
+    @include tablet {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 48px;
+      letter-spacing: -0.72px;
+      margin-bottom: 24px;
+    }
+
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 31px;
+    }
+    @include smallDesktop {
+      gap: 27px;
+    }
+    @include desktop {
+      gap: 44px;
+    }
+
+    &-item {
+      max-width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+      @include tablet {
+        justify-self: left;
+        width: 112px;
+        max-width: 112px;
+      }
+      @include largeDesktop {
+        width: 140px;
+        max-width: 140px;
+      }
+
+      &-img {
+        border-radius: 17px;
+        margin-bottom: 8px;
+        @include tablet {
+          min-width: 112px;
+          justify-self: left;
+        }
+        @include largeDesktop {
+          min-width: 140px;
+        }
+      }
+
+      &-text {
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height:  128.571%;
+        letter-spacing: -0.14px;
+        color: var(--title-color);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        @include tablet {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 20px;
+        }
+        @include largeDesktop {
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height:  140%;
+          letter-spacing: -0.4px;
+        }
+      }
+
+    }
+  }
+}
+.often-searched.visible {
+  min-height:var(--height100vh);
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  @include tablet {
+    height: min-content;
+    max-height: 80vh;
+    min-height: 80vh;
+  }
+}
+
+.often-searched::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  display: block;
+}
+
+.often-searched::-webkit-scrollbar-track {
+  background: transparent;
+  display: block;
+}
+
+.often-searched::-webkit-scrollbar-thumb {
+  background:rgba(168, 191, 244, 0.50);
+  border-radius: 20px;
+  display: block;
+}

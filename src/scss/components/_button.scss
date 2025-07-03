@@ -1,0 +1,20 @@
+.btn {
+  width: 100%;
+  min-height: 44px;
+  height: auto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.16px;
+  color: var(--title-color);
+  @include flex-center;
+  border-radius: 8px;
+  @include tablet {
+    font-size: 16px;
+  }
+  &.active {
+    background: var(--main-blue);
+    color: var(--color-btn-white);
+  }
+}

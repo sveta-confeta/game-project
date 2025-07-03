@@ -1,0 +1,86 @@
+* {
+	box-sizing: border-box;
+
+}
+html {
+	user-select: text;
+	::selection {
+		background-color: var(--main-blue);
+		color: var(--second-bg);
+	}
+}
+
+
+body.light {
+	color: var(--text-color);
+	font-family: var(--font-main), sans-serif;
+	overflow-x: hidden;
+	position: relative;
+	background: var(--main-bg);
+	@include tablet {
+		padding-top: 16px;
+	}
+	@include desktop {
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -7px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1449px;
+			height: 1395px;
+			background-image: url("./../../img/bg-secret-chat-desctop.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			z-index: 1;
+		}
+	}
+
+}
+
+body.no-scroll {
+	margin-right: var(--scrollbar-width, 0px);
+}
+
+img {
+	display: block;
+}
+
+a {
+	color: var(--link-color);
+}
+
+*::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	display: none;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+	display: none;
+}
+
+*::-webkit-scrollbar:horizontal {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	display: none;
+}
+
+
+
+.main-page {
+	@media (max-width: 767px) {
+		transition: padding-top 0.8s ease-in-out;
+	}
+
+}
+
+
