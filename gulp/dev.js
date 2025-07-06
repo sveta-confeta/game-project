@@ -4,6 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const server = require('gulp-server-livereload');
 const clean = require('gulp-clean');
+const ghPages = require('gulp-gh-pages');
 const fs = require('fs');
 const sourceMaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
@@ -166,5 +167,14 @@ gulp.task('watch:dev', function () {
 	watch('./src/files/**/*', gulp.parallel('files:dev'));
 	watch('./src/js/**/*.js', gulp.parallel('js:dev'));
 	watch('./src/img/svgicons/*', gulp.series( 'svgSymbol:dev'));
+});
+
+const paths = {
+	build: './build/**/*'
+};
+
+gulp.task('deploy', function () {
+	return gulp.src(paths.build)
+		.pipe(ghPages());
 });
 

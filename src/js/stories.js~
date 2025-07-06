@@ -346,11 +346,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     function closeSlider() {
-        console.log('Closing slider');
+        console.log('ff');
         storiesSlide.classList.remove("storiesCards__open");
         activeSlideIndex = 0;
         document.body.classList.remove("no-scroll-all");
-        document.body.style.overflow = "auto";
+
         stopSlideShow();
     }
 

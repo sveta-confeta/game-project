@@ -4,6 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const server = require('gulp-server-livereload');
 const clean = require('gulp-clean');
+const ghPages = require('gulp-gh-pages');
 const fs = require('fs');
 const sourceMaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
@@ -20,7 +21,7 @@ const watch = require('gulp-watch');
 const ignore = require('gulp-ignore');
 const autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('clean:dev', function (do ne) {
+gulp.task('clean:dev', function (done) {
 	if (fs.existsSync('./build/')) {
 		return gulp.src('./build/', { read: false }).pipe(clean({ force: true }));
 	}
