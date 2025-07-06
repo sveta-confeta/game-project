@@ -316,7 +316,7 @@
       }
 
       &.highlighted {
-        background-image: url("./../img/poligon.svg");
+        background-image: url("./../../img/poligon.svg");
         background-repeat: no-repeat;
         background-size: 32px 33px;
         background-position: 7px 3px;
@@ -326,7 +326,7 @@
         color: var(--white-text);
         padding: 10px 19px;
         @include tablet {
-          background-image: url("./../img/poligon-decst.svg");
+          background-image: url("./../../img/poligon-decst.svg");
           font-size: 28px;
           font-style: normal;
           background-size: 71px 64px;

@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "gulp default",
 		"build": "gulp docs"
+
 	},
 	"devDependencies": {
 		"@babel/core": "^7.22.5",
